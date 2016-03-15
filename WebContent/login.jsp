@@ -9,32 +9,16 @@ login
 </head>
 <body>
 <%
-String strUserName=(String)request.getParameter("username");
-String strPassword=(String)request.getParameter("password");
-String strSelect=(String)request.getParameter("select");
+String strUserName=(String)request.getParameter("user-email");
+String strPassword=(String)request.getParameter("user-pw");
 int intT=0;
-if(strSelect!=null&&strSelect.equals("student")){
-        intT=data.getRowCount("tb_student WHERE sname='"+strUserName+"' AND password='"+strPassword+"'");
-        if(intT>0){
-            session.setAttribute("name",strUserName);
-                session.setAttribute("use","student");
-            response.sendRedirect("student/login.jsp");
-        }else{
-                out.print(show.errorBox("Incorrect Username or Password.Please try again.","We don't recognize that user name. Please try again."));
-                return;
-        }
-}else if(strSelect!=null&&strSelect.equals("company")){
-        intT=data.getRowCount("tb_company WHERE cname='"+strUserName+"' AND password='"+strPassword+"'");
-        if(intT>0){
-            session.setAttribute("name",strUserName);
-                session.setAttribute("use","company");
-            response.sendRedirect("company/login.jsp");
-        }else{
-            out.print(show.errorBox("Incorrect Username or Password.Please try again.","We don't recognize that user name. Please try again."));
-            return;
-        }
+intT=data.getRowCount("tb_student WHERE sname='"+strUserName+"' AND password='"+strPassword+"'");
+if(intT>0){
+    session.setAttribute("name",strUserName);
+       session.setAttribute("use","student");
+    response.sendRedirect("student/login.jsp");
 }else{
-        out.print(show.errorBox("Incorrect Username or Password.Please try again.","We don't recognize that user name. Please try again."));
+        out.print(show.errorBox("Incorrect User Name or Password.Please try again.",""));
         return;
 }
 %>
