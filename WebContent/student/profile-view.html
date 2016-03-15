@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Edit Profile</title>
+<title>My Profile</title>
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="../dist/css/vendor/bootstrap.min.css" rel="stylesheet">
@@ -37,7 +37,6 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav">
-          
           <li class="dropdown active">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-user"></i>&nbsp;&nbsp; Profile <span class="caret"></span>
@@ -79,38 +78,43 @@
   
   <section class="content" style="padding-top:80px;">
     <div class="container content">
-    <div class="row">
-      <div class="col-md-2">
-        <!-- #### Side Nav #### -->
-        <div id="sidenav" class="affix hidden-sm hidden-xs ">
-          <div class="text-center">
-            <ul class="nav nav-stacked nav-pills row-space-top-5" data-spy="affix">
-              <li>
-                <a href="#basics">
-                  Basics
-                </a>
-              </li>
-              <li>
-                <a href="#edu">
-                  Education
-                </a>
-              </li>
-              <li>
-                <a href="#cert">
-                  Certificate
-                </a>
-              </li>
-              <li>
-                <a href="#work">
-                  Work
-                </a>
-              </li>
-              <li>
-                <a href="#project">
-                  Project
-                </a>
-              </li>
-              <!--
+      <div class="row">
+        <div class="col-md-2">
+          <!-- #### Side Nav #### -->
+          <div id="sidenav" class="affix hidden-sm hidden-xs ">
+            <div class="text-center">
+              <ul class="nav nav-stacked nav-pills row-space-top-5" data-spy="affix">
+                <li>
+                  <a href="#basics">
+                    Basics
+                  </a>
+                </li>
+                <li>
+                  <a href="#edu">
+                    Education
+                  </a>
+                </li>
+                <li>
+                  <a href="#cert">
+                    Certificate
+                  </a>
+                </li>
+                <li>
+                  <a href="#work">
+                    Work
+                  </a>
+                </li>
+                <li>
+                  <a href="#project">
+                    Project
+                  </a>
+                </li>
+                <li>
+                  <a href="#skills">
+                    Skills
+                  </a>
+                </li>
+                <!--
               <li>
                 <hr>
               </li>
@@ -120,136 +124,164 @@
                 </a>
               </li>
               -->
-            </ul>
+              </ul>
+            </div>
           </div>
+        </div>
+        <div class="col-md-10">
+          <div class="panel panel-default text-center" id="basics">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-sm-12">
+                  <h1 class="text-uppercase">John Doe</h1>
+                  <h5 class="text-muted">San Jose, California, United States</h5>
+                  
+                  <a href="#">
+                    <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
+                  </a>
+                  <hr width="30%">
+                  <h4>Expected Job Title</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="panel panel-default" id="edu">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-sm-8 col-xs-12">
+                  <h3 class="panel-title">Education</h3>
+                </div>
+                <div class="col-sm-4 col-xs-12 text-right">
+                  <a href="#">
+                    <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-sm-4">
+                  <h2><small class="text-uppercase">JUL 2014 — JUL 2015</small></h2>
+                </div>
+                <div class="col-md-9 col-sm-8">
+                  <h2>School Name</h2>
+                  <h4>San Jose, California, United States</h4>
+                  <p class="text-uppercase">Degree</p>
+                  <p>Major</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="panel panel-default" id="cert">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-sm-8 col-xs-12">
+                  <h3 class="panel-title">Certificate</h3>
+                </div>
+                <div class="col-sm-4 col-xs-12 text-right">
+                  <a href="#">
+                    <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-sm-4">
+                  <h2><small class="text-uppercase">JUL 2014</small></h2>
+                </div>
+                <div class="col-md-9 col-sm-8">
+                  <h2>Certificate Name</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="panel panel-default" id="work">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-sm-8 col-xs-12">
+                  <h3 class="panel-title">Work/Employment (Most Recent)</h3>
+                </div>
+                <div class="col-sm-4 col-xs-12 text-right">
+                  <a href="#">
+                    <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-sm-4">
+                  <h2><small class="text-uppercase">JUL 2014 — JUL 2015</small></h2>
+                </div>
+                <div class="col-md-9 col-sm-8">
+                  <h2>Company Name</h2>
+                  <h4>San Jose, California, United States</h4>
+                  <h5 class="text-uppercase">Title</h5>
+                  <p>Responsiblities</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="panel panel-default" id="project">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-6">
+                  <h3 class="panel-title">Project</h3>
+                </div>
+                <div class="col-xs-6 text-right">
+                  <a href="#">
+                    <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-sm-4">
+                  <h2><small class="text-uppercase">JUL 2014 — JUL 2015</small></h2>
+                </div>
+                <div class="col-md-9 col-sm-8">
+                  <h2>Project Name</h2>
+      <p>Description & Responsiblities</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="panel panel-default" id="skills">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-xs-6">
+                  <h3 class="panel-title">Skills</h3>
+                </div>
+                <div class="col-xs-6 text-right">
+                  <a href="#">
+                    <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-sm-12">
+                  <p>Skill 1, Skill 2, Skill 3</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
         </div>
       </div>
-      <div class="col-md-10">
-      
-        <div class="panel panel-default text-center" id="basics">
-          <div class="panel-body">
-          <div class="row">
-          <div class="col-sm-12">
-            <h1 class="text-uppercase">John Doe</h1>
-              <h6>San, California, United States</h6>
-              <a href="#"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit</a>
-              <hr width="30%">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-              </div>
-              </div>
-          </div>
-        </div>
-        <br>
-        <div class="panel panel-default" id="edu">
-          <div class="panel-heading">
-          <div class="row">
-          <div class="col-xs-6">
-            <h3 class="panel-title">Education</h3>
-            </div>
-            <div class="col-xs-6 text-right">
-            <a href="#"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit</a>
-            </div>
-          </div>
-          </div>
-          <div class="panel-body">
-            <h1>1</h1>
-              
-              <div class="row">
-                <div class="col-sm-12">
-                  <label for="" class="control-label">Degree</label>
-                </div>
-                <div class="col-sm-12 row-space-1">
-                  123
-                </div>
-              </div>
-          </div>
-        </div>
-        <br>
-         <div class="panel panel-default" id="cert">
-          <div class="panel-heading">
-            <div class="row">
-          <div class="col-xs-6">
-            <h3 class="panel-title">Certificate</h3>
-            </div>
-            <div class="col-xs-6 text-right">
-            <a href="#"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit</a>
-            </div>
-          </div>
-          </div>
-          <div class="panel-body">
-            <h1>1</h1>
-              
-              <div class="row">
-                <div class="col-sm-12">
-                  <label for="" class="control-label">Degree</label>
-                </div>
-                <div class="col-sm-12 row-space-1">
-                  123
-                </div>
-              </div>
-          </div>
-        </div>
-        <br>
-        <br>
-         <div class="panel panel-default" id="work">
-          <div class="panel-heading">
-            
-            <div class="row">
-          <div class="col-xs-6">
-            <h3 class="panel-title">Work/Employment</h3>
-            </div>
-            <div class="col-xs-6 text-right">
-            <a href="#"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit</a>
-            </div>
-          </div>
-          </div>
-          <div class="panel-body">
-            <h1>1</h1>
-              
-              <div class="row">
-                <div class="col-sm-12">
-                  <label for="" class="control-label">Degree</label>
-                </div>
-                <div class="col-sm-12 row-space-1">
-                  123
-                </div>
-              </div>
-          </div>
-        </div>
-        <br>
-        <br>
-         <div class="panel panel-default" id="project">
-          <div class="panel-heading">
-            <div class="row">
-          <div class="col-xs-6">
-            <h3 class="panel-title">Project</h3>
-            </div>
-            <div class="col-xs-6 text-right">
-            <a href="#"><i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit</a>
-            </div>
-          </div>
-          </div>
-          <div class="panel-body">
-            <h1>1</h1>
-              
-              <div class="row">
-                <div class="col-sm-12">
-                  <label for="" class="control-label">Degree</label>
-                </div>
-                <div class="col-sm-12 row-space-1">
-                  123
-                </div>
-              </div>
-          </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-      </div>
+      <script>window.prettyPrint && prettyPrint();</script>
     </div>
-    <script>window.prettyPrint && prettyPrint();</script>
-  </div>
   </section>
   <!-- Bootstrap core JavaScript
 ================================================== -->
