@@ -147,7 +147,7 @@ if(strSid!=null){
 }
 %>
   <tr align="center" >
-    <td height="35" colspan="4"><a href="mail/">Send Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a onClick="Jscript:window.close()" style="cursor:hand; ">关闭窗口</a></td>
+    <td height="35" colspan="4"><a href="mail/">Send Email</a>&nbsp;&nbsp;&nbsp;&nbsp;<a onClick="Jscript:window.close()" style="cursor:hand; ">Close</a></td>
   </tr>
 </table>
 </body>

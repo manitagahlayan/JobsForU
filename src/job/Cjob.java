@@ -2,78 +2,52 @@ package job;
 
 public class Cjob {
 
-    private int jobid;
-    private String cname;
-    private String specialty;
-    private String job;
-    private String emolument;
-    private String ptime;
-    private String atime;
-    private String other;
+    private int jobID;
+    private String companyName;
+    private String jobTitle;
+    private String location;
+    private String jobDescription;
     public Cjob() {
+    	
     }
 
-    public int getJobid() {
-        return jobid;
+    public int getJobID() {
+        return jobID;
     }
 
-    public void setJobid(int jobid) {
-        this.jobid = jobid;
+    public void setJobID(int jobID) {
+        this.jobID = jobID;
     }
 
-    public String getCname() {
-        return cname;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setCname(String cname) {
-        this.cname = cname;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
-    public String getSpecialty() {
-        return specialty;
+    public String getJobTitle() {
+        return jobTitle;
     }
 
-    public void setSpecialty(String specialty) {
-        this.specialty = specialty;
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
-    public String getJob() {
-        return job;
+    public String getLocation() {
+        return location;
     }
 
-    public void setJob(String job) {
-        this.job = job;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getEmolument() {
-        return emolument;
+    public String getJobDescription() {
+        return jobDescription;
     }
 
-    public void setEmolument(String emolument) {
-        this.emolument = emolument;
-    }
-
-    public String getPtime() {
-        return ptime;
-    }
-
-    public void setPtime(String ptime) {
-        this.ptime = ptime;
-    }
-
-    public String getAtime() {
-        return atime;
-    }
-
-    public void setAtime(String atime) {
-        this.atime = atime;
-    }
-
-    public String getOther() {
-        return other;
-    }
-
-    public void setOther(String other) {
-        this.other = other;
+    public void setJobDescription(String jobDescription) {
+        this.jobDescription = jobDescription;
     }
 }

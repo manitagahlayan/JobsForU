@@ -11,90 +11,33 @@ package job;
 
 public class Student {
 
-    private String sname;
-    private String password;
-    private String name;
-    private int age;
-    private int sex;
-    private String resume;
-    private String school;
-    private String specialty;
-    private String knowledge;
     private String email;
-    private String birthday;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String telephone;
+    private String address;
+    private String summary;
+    private String expectedJob;
+    private String skills;
+    private String schoolName;
+    private String schoolStartMonth;
+    private int schoolStartYear;
+    private String schoolEndMonth;
+    private int schoolEndYear;
+    private String schoolDegree;
+    private String schoolMajor;
+    private String workCompanyName;
+    private String workJobTitle;
+    private String workStartMonth;
+    private int workStartYear;
+    private String workEndMonth;
+    private int workEndYear;
+    private String workJobResponsibility;
+    private String projectName;
+    private String projectDescription;
     public Student() {
-    }
-
-    public String getSname() {
-        return sname;
-    }
-
-    public void setSname(String sname) {
-        this.sname = sname;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public int getSex() {
-        return sex;
-    }
-
-    public void setSex(int sex) {
-        this.sex = sex;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getSchool() {
-        return school;
-    }
-
-    public void setSchool(String school) {
-        this.school = school;
-    }
-
-    public String getSpecialty() {
-        return specialty;
-    }
-
-    public void setSpecialty(String specialty) {
-        this.specialty = specialty;
-    }
-
-    public String getKnowledge() {
-        return knowledge;
-    }
-
-    public void setKnowledge(String knowledge) {
-        this.knowledge = knowledge;
+    	
     }
 
     public String getEmail() {
@@ -105,11 +48,197 @@ public class Student {
         this.email = email;
     }
 
-    public String getResume() {
-        return resume;
+    public String getPassword() {
+        return password;
     }
 
-    public void setResume(String resume) {
-        this.resume = resume;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+    
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public String getExpectedJob() {
+        return expectedJob;
+    }
+
+    public void setExpectedJob(String expectedJob) {
+        this.expectedJob = expectedJob;
+    }
+    
+    public String getSkills() {
+        return skills;
+    }
+
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
+    
+    public String getSchoolName() {
+        return schoolName;
+    }
+
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
+    }
+    
+    public String getSchoolStartMonth() {
+        return schoolStartMonth;
+    }
+
+    public void setSchoolStartMonth(String schoolStartMonth) {
+        this.schoolStartMonth = schoolStartMonth;
+    }
+    
+    public int getSchoolStartYear() {
+        return schoolStartYear;
+    }
+
+    public void setSchoolStartYear(int schoolStartYear) {
+        this.schoolStartYear = schoolStartYear;
+    }
+    
+    public String getSchoolEndMonth() {
+        return schoolEndMonth;
+    }
+
+    public void setSchoolEndMonth(String schoolEndMonth) {
+        this.schoolEndMonth = schoolEndMonth;
+    }
+    
+    public int getSchoolEndYear() {
+        return schoolEndYear;
+    }
+
+    public void setSchoolEndYear(int schoolEndYear) {
+        this.schoolEndYear = schoolEndYear;
+    }
+    
+    public String getSchoolDegree() {
+        return schoolDegree;
+    }
+
+    public void setSchoolDegree(String schoolDegree) {
+        this.schoolDegree = schoolDegree;
+    }
+    
+    public String getSchoolMajor() {
+        return schoolMajor;
+    }
+
+    public void setSchoolMajor(String schoolMajor) {
+        this.schoolMajor = schoolMajor;
+    }
+    
+    
+    public String getWorkCompanyName() {
+        return workCompanyName;
+    }
+
+    public void setWorkCompanyName(String workCompanyName) {
+        this.workCompanyName = workCompanyName;
+    }
+    
+    public String getWorkJobTitle() {
+        return workJobTitle;
+    }
+
+    public void setWorkJobTitle(String workJobTitle) {
+        this.workJobTitle = workJobTitle;
+    }
+    
+    public String getWorkStartMonth() {
+        return workStartMonth;
+    }
+
+    public void setWorkStartMonth(String workStartMonth) {
+        this.workStartMonth = workStartMonth;
+    }
+    
+    public int getWorkStartYear() {
+        return workStartYear;
+    }
+
+    public void setWorkStartYear(int workStartYear) {
+        this.workStartYear = workStartYear;
+    }
+    
+    public String getWorkEndMonth() {
+        return workEndMonth;
+    }
+
+    public void setWorkEndMonth(String workEndMonth) {
+        this.workEndMonth = workEndMonth;
+    }
+    
+    public int getWorkEndYear() {
+        return workEndYear;
+    }
+
+    public void setWorkEndYear(int workEndYear) {
+        this.workEndYear = workEndYear;
+    }
+    
+    public String getWorkJobResponsibility() {
+        return workJobResponsibility;
+    }
+
+    public void setWorkJobResponsibility(String workJobResponsibility) {
+        this.workJobResponsibility = workJobResponsibility;
+    }
+    
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+    
+    public String getProjectDescription() {
+        return projectDescription;
+    }
+
+    public void setProjectDescription(String projectDescription) {
+        this.projectDescription = projectDescription;
+    }
+    
 }

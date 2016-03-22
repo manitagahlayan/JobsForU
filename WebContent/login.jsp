@@ -11,6 +11,7 @@ login
 <%
 String strUserName=(String)request.getParameter("user-email");
 String strPassword=(String)request.getParameter("user-pw");
+//String strSelect=(String)request.getParameter("select");
 int intT=0;
 intT=data.getRowCount("tb_student WHERE sname='"+strUserName+"' AND password='"+strPassword+"'");
 if(intT>0){
@@ -18,9 +19,35 @@ if(intT>0){
        session.setAttribute("use","student");
     response.sendRedirect("student/login.jsp");
 }else{
-        out.print(show.errorBox("Incorrect User Name or Password.Please try again.",""));
+        out.print(show.errorBox("Incorrect User Name or Password.Please try again.","We don't recognize that user name. Please try again."));
         return;
 }
+/**
+if(strSelect!=null&&strSelect.equals("student")){
+        intT=data.getRowCount("tb_student WHERE sname='"+strUserName+"' AND password='"+strPassword+"'");
+        if(intT>0){
+            session.setAttribute("name",strUserName);
+                session.setAttribute("use","student");
+            response.sendRedirect("student/login.jsp");
+        }else{
+                out.print(show.errorBox("Incorrect User Name or Password.Please try again.","We don't recognize that user name. Please try again."));
+                return;
+        }
+}else if(strSelect!=null&&strSelect.equals("company")){
+        intT=data.getRowCount("tb_company WHERE cname='"+strUserName+"' AND password='"+strPassword+"'");
+        if(intT>0){
+            session.setAttribute("name",strUserName);
+                session.setAttribute("use","company");
+            response.sendRedirect("company/login.jsp");
+        }else{
+            out.print(show.errorBox("Incorrect User Name or Password.Please try again.","We don't recognize that user name. Please try again."));
+            return;
+        }
+}else{
+        out.print(show.errorBox("Incorrect User Name or Password.Please try again.","We don't recognize that user name. Please try again."));
+        return;
+}
+**/
 %>
 </body>
 </html>

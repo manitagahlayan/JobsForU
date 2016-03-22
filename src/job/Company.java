@@ -11,39 +11,14 @@ package job;
 
 public class Company {
 
-    private String cname;
-    private String password;
-    private String name;
     private String email;
-    private String tel;
-    private String manage;
+    private String password;
+    private String companyName;
+    private String telephone;
     private String address;
-    private String resume;
+    private String contactName;
     public Company() {
-    }
-
-    public String getCname() {
-        return cname;
-    }
-
-    public void setCname(String cname) {
-        this.cname = cname;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    	
     }
 
     public String getEmail() {
@@ -54,20 +29,28 @@ public class Company {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
     public String getTel() {
-        return tel;
+        return telephone;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
-
-    public String getManage() {
-        return manage;
-    }
-
-    public void setManage(String manage) {
-        this.manage = manage;
+    public void setTel(String telephone) {
+        this.telephone = telephone;
     }
 
     public String getAddress() {
@@ -78,11 +61,11 @@ public class Company {
         this.address = address;
     }
 
-    public String getResume() {
-        return resume;
+    public String getContactName() {
+        return contactName;
     }
 
-    public void setResume(String resume) {
-        this.resume = resume;
+    public void setContactName(String contactName) {
+        this.contactName = contactName;
     }
 }

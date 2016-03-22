@@ -6,9 +6,9 @@
 </head>
 <%
 Show show=new Show();
-String strUser=(String)session.getAttribute("name");
+String strUser=(String)session.getAttribute("email");
 if(strUser==null){
-	out.print(show.errorBox("\u8BF7\u4F60\u6B63\u5E38\u767B\u5F55\uFF01","\u9A8C\u8BC1\u4FE1\u606F"));
+	out.print(show.errorBox("oops",""));
 	return;
 }
 %>
