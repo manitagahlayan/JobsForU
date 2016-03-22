@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="com.bwm.db.Data"%>
 <%@ include file="include.jsp"%>
 <%

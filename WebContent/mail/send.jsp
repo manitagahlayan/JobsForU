@@ -1,12 +1,12 @@
-<%@ page contentType="text/html;charset=utf-8" %>
-<%@ page import="javax.mail.internet.*" %>
-<%@ page import="javax.activation.*" %>
-<%@ page import="javax.mail.*" %>
-<%@ page import="java.util.*" %>
-<%@ page import="java.sql.*" %>
-<%@ page import="java.io.*" %>
+<%@ page contentType="text/html;charset=utf-8"%>
+<%@ page import="javax.mail.internet.*"%>
+<%@ page import="javax.activation.*"%>
+<%@ page import="javax.mail.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="java.io.*"%>
 <%@ page import="com.bwm.db.Conn"%>
-<%@ page import="com.bwm.page.Show" %>
+<%@ page import="com.bwm.page.Show"%>
 <%
 request.setCharacterEncoding("utf-8");
 Show show=new Show();

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="com.bwm.db.Data"%>
-<%@ page import="com.bwm.page.Show"%> 
+<%@ page import="com.bwm.page.Show"%>
 <%@ page import="java.sql.*"%>
 <%
 String strId=(String)request.getParameter("intId");

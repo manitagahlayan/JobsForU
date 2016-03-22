@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="com.bwm.page.Show"%>
 <html>
 <head>
@@ -12,10 +12,13 @@ if(strUser==null){
 	return;
 }
 %>
-<frameset rows="70,*" cols="*" frameborder="NO" border="0" framespacing="0">
-  <frame src="top.htm" name="topFrame" frameborder="no" noresize>
-  <frame src="login.htm" name="mainFrame" frameborder="no">
+<frameset rows="70,*" cols="*" frameborder="NO" border="0"
+	framespacing="0">
+	<frame src="top.htm" name="topFrame" frameborder="no" noresize>
+	<frame src="login.htm" name="mainFrame" frameborder="no">
 </frameset>
-<noframes><body>
-</body></noframes>
+<noframes>
+	<body>
+	</body>
+</noframes>
 </html>

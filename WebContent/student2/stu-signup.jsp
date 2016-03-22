@@ -1,10 +1,10 @@
-<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="com.bwm.page.Show"%>
 <%@ page import="com.bwm.db.Data"%>
-<%@ page import="com.bwm.string.Str"%> 
+<%@ page import="com.bwm.string.Str"%>
 <%request.setCharacterEncoding("utf-8");%>
 <jsp:useBean id="student" class="job.Student" scope="request" />
-<jsp:setProperty name="student" property="*"/>
+<jsp:setProperty name="student" property="*" />
 <%
 Str str=new Str();
 Show show=new Show();

@@ -1,14 +1,12 @@
-<%@ page contentType="text/html; charset=utf-8" %>
-<%@ page import="com.bwm.db.Data" %>
-<%@ page import="com.bwm.page.Show" %>
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page import="com.bwm.db.Data"%>
+<%@ page import="com.bwm.page.Show"%>
 <html>
 <head>
-<title>
-login
-</title>
+<title>login</title>
 </head>
 <body>
-<%
+	<%
 String strName=(String)request.getParameter("name");
 String strPassword=(String)request.getParameter("password");
 Data data=new Data();
