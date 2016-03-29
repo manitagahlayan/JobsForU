@@ -17,18 +17,18 @@ if(student.getPassword().equals("")||student.getEmail().equals("")){
         
         int intT=0;
         Data data=new Data();
-        intT=data.getRowCount("student WHERE email='"+student.getEmail()+"'");
+        intT=data.getRowCount("tb_student WHERE email='"+student.getEmail()+"'");
         if(intT>0){
             out.print(show.errorBox("Sorry, this email already exists. Please try with another one.",""));
             return;
         }else{
-            intT=data.insert("INSERT INTO student(email,password) VALUES('" + student.getEmail() + "','"+
-                student.getPassword()+"')");
+            intT=data.insert("INSERT INTO tb_student(sname,password,email) VALUES('" + student.getEmail() + "','"+
+                student.getPassword()+"','"+student.getEmail()+"')");
             if(intT<=0){
                         out.print(show.errorBox("Please check the email format.",""));
                         return;
             }else{
-                        out.print("<script>alert('Register Successed!');document.location='signup-profile.jsp';</script>");
+                        out.print("<script>alert('Register Successed!');document.location='../login-sign-in/login-signup.html';</script>");
             }
         }
 }

@@ -13,7 +13,7 @@ public class Conn {
     private ResultSet rs;
     private static final String drivername =
         "com.mysql.jdbc.Driver";
-    private static final String url = "jdbc:mysql://localhost:3306/linkedus?user=root&password=root";
+    private static final String url = "jdbc:mysql://localhost:3306/linkedus?user=root&password=0000";
 
     /**
      *method explain:   Get Connection DataBase

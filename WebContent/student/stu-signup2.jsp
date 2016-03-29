@@ -28,7 +28,7 @@ if(student.getPassword().equals("")||student.getEmail().equals("")){
                         out.print(show.errorBox("Please check the email format.",""));
                         return;
             }else{
-                        out.print("<script>alert('Register Successed!');document.location='signup-profile.jsp';</script>");
+                        out.print("<script>alert('Register Successed!');document.location='profile-edit.jsp';</script>");
             }
         }
 }
