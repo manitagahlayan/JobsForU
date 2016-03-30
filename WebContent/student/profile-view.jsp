@@ -1,3 +1,7 @@
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page import="com.bwm.db.Conn"%>
+<%@ page import="com.bwm.page.Show"%>
+<%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +26,14 @@
 </head>
 
 <body>
+	<%
+Conn con=new Conn();
+//Show show=new Show();
+String strChecked="checked";
+String strEmail=(String)session.getAttribute("email");
+ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
+        if(rs.next()){
+%>
 	<!-- Navigation -->
 	<nav class="navbar navbar-inverse navbar-fixed-top drop-shadow"
 		role="navigation">
@@ -45,12 +57,12 @@
 					</a>
 						<ul class="dropdown-menu">
 							<li><a href="profile.html"> View Profile </a></li>
-							<li><a href="profile-edit.html"> Edit Profile </a></li>
+							<li><a href="profile-edit.jsp"> Edit Profile </a></li>
 							<li><a href="upload.html"> Upload Resume </a></li>
 						</ul></li>
-					<li><a href="account.html"> <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
+					<li><a href="job-listing.html"> <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
 					</a></li>
-					<li><a href="account.html"> <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
+					<li><a href="account.jsp"> <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
 					</a></li>
 				</ul>
 			</div>
@@ -88,29 +100,22 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-sm-12">
-									<h1 class="text-uppercase">John Doe</h1>
-									<h5 class="text-muted">San Jose, California, United States</h5>
+									<h1 class="text-uppercase"><%=rs.getString(3)%> <%=rs.getString(4)%></h1>
+									<h5 class="text-muted"><%=rs.getString(6)%></h5>
 									<a href="profile-edit.jsp"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
 									</a>
 									<hr width="30%">
 									<h4>Expected Job Title</h4>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-										elit, sed do eiusmod tempor incididunt ut labore et dolore
-										magna aliqua. Ut enim ad minim veniam, quis nostrud
-										exercitation ullamco laboris nisi ut aliquip ex ea commodo
-										consequat. Duis aute irure dolor in reprehenderit in voluptate
-										velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-										sint occaecat cupidatat non proident, sunt in culpa qui
-										officia deserunt mollit anim id est laborum.</p>
+									<p><%=rs.getString(8)%></p>
                     
 								</div>
 							</div>
               <div class="row">
                 <div class="col-md-6 col-sm-12">
-                  <h1><i class="fa fa-envelope-o"></i></h1>&nbsp;example@email.com
+                  <h1><i class="fa fa-envelope-o"></i></h1>&nbsp;<%=rs.getString(1)%>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                  <h1><i class="fa fa-mobile-phone"></i></h1>&nbsp;(123)456-7890
+                  <h1><i class="fa fa-mobile-phone"></i></h1>&nbsp;<%=rs.getString(5)%>
                 </div>
               </div>
 						</div>
@@ -123,7 +128,7 @@
 									<h3 class="panel-title">Education (Most Recent)</h3>
 								</div>
 								<div class="col-sm-4 col-xs-12 text-right">
-									<a href="profile-edit.html"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
+									<a href="profile-edit.jsp"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
 									</a>
 								</div>
 							</div>
@@ -132,7 +137,7 @@
 							<div class="row">
 								<div class="col-md-3">
 									<h3>
-										<small class="text-uppercase">JUL 2014 — JUL 2015</small>
+										<small class="text-uppercase"><%=rs.getString(11)%><%=rs.getString(12)%> — <%=rs.getString(13)%><%=rs.getString(14)%></small>
 									</h3>
 								</div>
 								<div class="col-md-9">
@@ -151,7 +156,7 @@
 									<h3 class="panel-title">Work / Employment (Most Recent)</h3>
 								</div>
 								<div class="col-sm-4 col-xs-12 text-right">
-									<a href="profile-edit.html"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
+									<a href="profile-edit.jsp"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
 									</a>
 								</div>
 							</div>
@@ -160,12 +165,12 @@
 							<div class="row">
 								<div class="col-md-3">
 									<h3>
-										<small class="text-uppercase">JUL 2014 — JUL 2015</small>
+										<small class="text-uppercase"><%=rs.getString(19)%><%=rs.getString(20)%> — <%=rs.getString(21)%><%=rs.getString(22)%></small>
 									</h3>
 								</div>
 								<div class="col-md-9">
-									<h2>Company Name</h2>
-									<h5 class="text-uppercase">Title</h5>
+									<h2><%=rs.getString(17)%></h2>
+									<h5 class="text-uppercase"><%=rs.getString(18)%></h5>
 									<p>Responsibilities</p>
 								</div>
 							</div>
@@ -179,7 +184,7 @@
 									<h3 class="panel-title">Project</h3>
 								</div>
 								<div class="col-xs-6 text-right">
-									<a href="profile-edit.html"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
+									<a href="profile-edit.jsp"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
 									</a>
 								</div>
 							</div>
@@ -188,8 +193,8 @@
 							<div class="row">
 
 								<div class="col-sm-12">
-									<h2>Project Name</h2>
-									<p>Description & Responsibilities</p>
+									<h2><%=rs.getString(24)%></h2>
+									<p><%=rs.getString(25)%></p>
 								</div>
 							</div>
 						</div>
@@ -202,7 +207,7 @@
 									<h3 class="panel-title">Skills</h3>
 								</div>
 								<div class="col-xs-6 text-right">
-									<a href="profile-edit.html"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
+									<a href="profile-edit.jsp"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
 									</a>
 								</div>
 							</div>
@@ -210,7 +215,7 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-sm-12">
-									<p>Skill 1, Skill 2, Skill 3</p>
+									<p><%=rs.getString(9)%></p>
 								</div>
 							</div>
 						</div>
@@ -233,5 +238,10 @@
 	<script>
           videojs.options.flash.swf = "../js/vendors/video-js.swf"
         </script>
+        	<%
+        }else{
+            out.print("<script>alert('Failed to Connect to Database.');document.location='profile-view.jsp';</script>");
+        }
+%>
 </body>
 </html>

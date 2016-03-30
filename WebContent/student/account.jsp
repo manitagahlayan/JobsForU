@@ -1,3 +1,7 @@
+<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page import="com.bwm.db.Conn"%>
+<%@ page import="com.bwm.page.Show"%>
+<%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +26,14 @@
 </head>
 
 <body>
+	<%
+Conn con=new Conn();
+Show show=new Show();
+String strChecked="checked";
+String strEmail=(String)session.getAttribute("email");
+ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
+        if(rs.next()){
+%>
 	<!-- Navigation -->
 	<nav class="navbar navbar-inverse navbar-fixed-top drop-shadow"
 		role="navigation">
@@ -73,7 +85,7 @@
             <div class="form-group">
               <label for="inputEmail1" class="col-lg-2 col-md-3 control-label">Email</label>
               <div class="col-lg-10 col-md-9 ">
-                <input type="email" class="form-control" id="inputEmail1" placeholder="Email" value="example@students.itu.edu" disabled>
+                <input type="email" class="form-control" id="inputEmail1" placeholder="Email" value="<%=rs.getString(1)%>" disabled>
               </div>
             </div>
             <div class="form-group">
@@ -85,7 +97,7 @@
             <div class="form-group">
               <label for="inputEmail1" class="col-lg-2 col-md-3 control-label">New Password</label>
               <div class="col-lg-10 col-md-9 ">
-                <input type="password" class="form-control" id="" placeholder="password" name="newPassword">
+                <input type="password" class="form-control" id="" placeholder="New Password" name="newPassword">
               </div>
             </div>
             <div class="form-group">
@@ -128,5 +140,10 @@
 	<script>
           videojs.options.flash.swf = "../js/vendors/video-js.swf"
         </script>
+                	<%
+        }else{
+            out.print("<script>alert('Failed to Connect to Database.');document.location='profile-view.jsp';</script>");
+        }
+%>
 </body>
 </html>

@@ -13,9 +13,9 @@ int intT=0;
 intT=data.getRowCount("student WHERE email='"+strEmail+"' AND password='"+strPassword+"'");
 if(intT>0){
     session.setAttribute("email",strEmail);
-    response.sendRedirect("profile-view.html");
+    response.sendRedirect("profile-view.jsp");
 }else{
-        out.print(show.errorBox("Incorrect User Name or Password.Please try again.",""));
+        out.print("<script>alert('Incorrect Email or Password.Please try again.');document.location='stu-login-signup.html';</script>");
         return;
 }
 %>
