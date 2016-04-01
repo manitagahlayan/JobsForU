@@ -1,30 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>My Profile</title>
-<!-- Bootstrap Core CSS -->
-<link href="../dist/css/vendor/bootstrap.min.css" rel="stylesheet">
-<!-- Loading Flat UI -->
-<link href="../dist/css/flat-ui.css" rel="stylesheet">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Manage Jobs | LinkedUs.org</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="../dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="../dist/css/flat-ui.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../dist/img/favicon.png">
+
 <!-- Custom CSS -->
 <link
 	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet prefetch">
 <link href="../dist/css/style.css" rel="stylesheet">
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
+  </head>
+  
 
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-inverse navbar-fixed-top drop-shadow"
-		role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-top drop-shadow" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -32,43 +38,20 @@
 					data-target="#navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         </button>
-        <span class="navbar-brand" style="color: #FFFFFF">Linked<strong>Us</strong>.org </span>
+        <span class="navbar-brand">Linked<strong>Us</strong>.org </span>
       </div>
       
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li class="dropdown">
-            <a href="#"
-						class="dropdown-toggle" data-toggle="dropdown">
-              <i
-							class="fa fa-user"></i>&nbsp;&nbsp; Profile <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a href="../student/profile.html">
-                  View Profile
-                </a>
-              </li>
-              <li>
-                <a href="../student/edit-profile.html">
-                  Edit Profile
-                </a>
-              </li>
-              <li>
-                <a href="../student/upload.html">
-                  Upload Resume
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class=" active">
-            <a href="../student/account.html">
+        <ul class="nav navbar-nav text-uppercase">
+          
+          <li class="active">
+            <a href="job-manage.html">
               <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
             </a>
           </li>
           <li>
-            <a href="../student/account.html">
+            <a href="account.html">
               <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
             </a>
           </li>
@@ -79,34 +62,37 @@
   </nav>
   <!-- Page Content -->
   
-  <section class="content" style="padding-top: 80px;">
-    <div class="container content">
+  <section class="content">
+    <div class="container">
       <div class="row">
         <div class="col-md-3 col-xs-12"><div>
-          <a href="job-edit.html" class="btn btn-primary btn-block btn-lg text-capitalize">post new job</a>
+          <a href="job-add.html" class="btn btn-primary btn-block btn-lg text-capitalize" target="_blank">
+          <i class="fa fa-plus"></i>&nbsp;&nbsp;post new job</a>
         </div><br></div>
         <div class="col-md-9 col-xs-12">
         
           <div class="panel panel-default" id="basics">
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-9 col-sm-12">
+                <div class="col-md-8 col-sm-12">
                   <h3 class="text-uppercase">Job Title</h3>
                   <h4>Company Name</h4>
-                  <h5><i class="fa fa-map-marker"></i>&nbsp;San Jose, California, United States</h5>
-                  <h5 class="text-muted">Mar 14, 2016</h5>
+                  <h5><i class="fa fa-map-marker"></i>&nbsp;&nbsp;San Jose, California, United States</h5>
+                  <h6 class="text-muted">Mar 14, 2016</h6>
                 </div>
-                <div class="col-md-3 col-sm-12 text-center">
-                  <h1>
+                <div class="col-md-4 col-sm-12 text-center">
+                  <h3>
                     <div class="btn-group btn-block">
-                    <select class="form-control select select-primary" data-toggle="select" required>
+                    <div class="form-group">
+                    <select class="form-control select select-default" data-toggle="select" required>
                       <option value="1" selected>Active</option>
                       <option value="0">Snoozed</option>
                     </select>
+                    </div>
 </div>
-                  </h1>
-                  <a href="job-detail.html" class="btn btn-primary btn-block">View</a>
                   
+                  <a href="job-detail.html" class="btn btn-primary btn-block" target="_blank">View</a>
+                  </h3>
                 </div>
               </div>
               <hr>
@@ -115,46 +101,7 @@
             </div>
           </div>
           <!--Pagination-->
-          <div>
-            <ul class="pagination">
-              <li  class="disabled">
-                <a href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="active">
-                <a href="#">
-                  1
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  2
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  3
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  4
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  5
-                </a>
-              </li>
-              <li>
-                <a href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!--Flat UI  Pagination-->
+          
           <div class="">
             <ul class="pagination">
               <li class="previous disabled">
@@ -246,15 +193,18 @@
       <script>window.prettyPrint && prettyPrint();</script>
     </div>
   </section>
-  <!-- Bootstrap core JavaScript
-================================================== -->
+  <!-- /.container -->
+
+  <!-- Bootstrap core JavaScript-->
+  
+<script src="../js/jquery.min.js"></script>
+  <script src="../js/vendor/jquery.min.js"></script>
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="../student/js/jquery.min.js"></script>
-  <script src="../student/js/vendor/jquery.min.js"></script>
-  <script src="../student/js/vendor/video.js"></script>
-  <script src="../student/js/flat-ui.min.js"></script>
-  <script src="../student/docs/assets/js/prettify.js"></script>
-  <script src="../student/docs/assets/js/application.js"></script>
+
+  <script src="../js/vendor/video.js"></script>
+  <script src="../js/flat-ui.min.js"></script>
+  <script src="../docs/assets/js/prettify.js"></script>
+  <script src="../docs/assets/js/application.js"></script>
   <script>
           videojs.options.flash.swf = "../js/vendors/video-js.swf"
         </script>
