@@ -3,10 +3,7 @@ package job;
 /**
  * <p>Title: </p>
  * <p>Description: Company type</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Company: MR</p>
- * @author BWM
- * @version 1.0
+ * @author Linkedus.org
  */
 
 public class Company {
