@@ -52,18 +52,18 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
 			<div class="collapse navbar-collapse" id="navbar-collapse">
 				<ul class="nav navbar-nav">
 
-					<li class="dropdown"><a href="#"
+					<li class="dropdown"><a href="profile-view.jsp"
 						class="dropdown-toggle" data-toggle="dropdown"> <i
 							class="fa fa-user"></i>&nbsp;&nbsp; Profile <span class="caret"></span>
 					</a>
 						<ul class="dropdown-menu">
-							<li><a href="profile.html"> View Profile </a></li>
-							<li><a href="edit-profile.html"> Edit Profile </a></li>
+							<li><a href="profile-view.jsp"> View Profile </a></li>
+							<li><a href="profile-edit.jsp"> Edit Profile </a></li>
 							<li><a href="upload.html"> Upload Resume </a></li>
 						</ul></li>
-					<li><a href="account.html"> <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
+					<li><a href="job-listing.jsp"> <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
 					</a></li>
-					<li class="active"><a href="account.html"> <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
+					<li class="active"><a href="account.jsp"> <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
 					</a></li>
 				</ul>
 			</div>

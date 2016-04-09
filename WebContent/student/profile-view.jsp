@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="com.bwm.db.Conn"%>
-<%@ page import="com.bwm.page.Show"%>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
@@ -26,16 +25,14 @@
 </head>
 
 <body>
-	<%
+<%
 Conn con=new Conn();
-//Show show=new Show();
-String strChecked="checked";
 String strEmail=(String)session.getAttribute("email");
 ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
-        if(rs.next()){
+        if(rs.next()){    
 %>
 	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top drop-shadow"
+	<nav class="navbar navbar-inverse navbar-fixed-top drop-shadow" 
 		role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -51,16 +48,17 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="dropdown active"><a href="#"
-						class="dropdown-toggle" data-toggle="dropdown"> <i
-							class="fa fa-user"></i>&nbsp;&nbsp; Profile <span class="caret"></span>
-					</a>
+					<li class="dropdown active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+							<i class="fa fa-user"></i>&nbsp;&nbsp; Profile 
+							<span class="caret"></span>
+						</a>
 						<ul class="dropdown-menu">
 							<li><a href="profile.html"> View Profile </a></li>
 							<li><a href="profile-edit.jsp"> Edit Profile </a></li>
 							<li><a href="upload.html"> Upload Resume </a></li>
 						</ul></li>
-					<li><a href="job-listing.html"> <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
+					<li><a href="job-listing.jsp"> <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
 					</a></li>
 					<li><a href="account.jsp"> <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
 					</a></li>
@@ -137,13 +135,13 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
 							<div class="row">
 								<div class="col-md-3">
 									<h3>
-										<small class="text-uppercase"><%=rs.getString(11)%><%=rs.getString(12)%> — <%=rs.getString(13)%><%=rs.getString(14)%></small>
+										<small class="text-uppercase"><%=rs.getString(11)%> <%=rs.getString(12)%> — <%=rs.getString(13)%> <%=rs.getString(14)%></small>
 									</h3>
 								</div>
 								<div class="col-md-9">
-									<h2>School Name</h2>
-									<h5 class="text-uppercase">Degree</h5>
-									<p>Major</p>
+									<h2><%=rs.getString("schoolName")%></h2>
+									<h5 class="text-uppercase"><%=rs.getString("schoolDegree")%></h5>
+									<p><%=rs.getString("schoolMajor")%></p>
 								</div>
 							</div>
 						</div>
@@ -165,13 +163,13 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
 							<div class="row">
 								<div class="col-md-3">
 									<h3>
-										<small class="text-uppercase"><%=rs.getString(19)%><%=rs.getString(20)%> — <%=rs.getString(21)%><%=rs.getString(22)%></small>
+										<small class="text-uppercase"><%=rs.getString(19)%> <%=rs.getString(20)%> — <%=rs.getString(21)%> <%=rs.getString(22)%></small>
 									</h3>
 								</div>
 								<div class="col-md-9">
 									<h2><%=rs.getString(17)%></h2>
 									<h5 class="text-uppercase"><%=rs.getString(18)%></h5>
-									<p>Responsibilities</p>
+									<p><%=rs.getString(23)%></p>
 								</div>
 							</div>
 						</div>

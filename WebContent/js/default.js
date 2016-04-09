@@ -2,22 +2,23 @@
 
 function reg(){
 	if(document.form.password.value!=document.form.rpassword.value){
-		alert("ÃÜÂëÓëÃÜÂëÈ·ÈÏ²»·û");
+		alert("Please make sure you type in the same password two times");
 		return false;
 	}
 	return true;
 }
+
 function email(){
 	if(document.form1.jname.value==""||document.form1.jname.value.indexOf("@")==-1||document.form1.jname.value.indexOf(".")==-1){
-		alert("ÇëÊäÈë¼ÄĞÅÈËÕıÈ·Email");
+		alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·Email");
 		return false;
 	}
 	if(document.form1.sname.value==""||document.form1.sname.value.indexOf("@")==-1||document.form1.sname.value.indexOf(".")==-1){
-		alert("ÇëÊäÈëÊÕĞÅÈËÕıÈ·Email");
+		alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·Email");
 		return false;
 	}
 	if(document.form1.title.value==""){
-		alert("ÇëÊäÈëÖ÷Ìâ");
+		alert("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		return false;
 	}
 
