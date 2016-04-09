@@ -3,10 +3,7 @@ package job;
 /**
  * <p>Title: </p>
  * <p>Description: Student type</p>
- * <p>Copyright: Copyright (c) 2004</p>
- * <p>Company: MR</p>
- * @author BWM
- * @version 1.0
+ * @author Linkedus.org
  */
 
 public class Student {
@@ -22,17 +19,17 @@ public class Student {
     private String skills;
     private String schoolName;
     private String schoolStartMonth;
-    private int schoolStartYear;
+    private String schoolStartYear;
     private String schoolEndMonth;
-    private int schoolEndYear;
+    private String schoolEndYear;
     private String schoolDegree;
     private String schoolMajor;
     private String workCompanyName;
     private String workJobTitle;
     private String workStartMonth;
-    private int workStartYear;
+    private String workStartYear;
     private String workEndMonth;
-    private int workEndYear;
+    private String workEndYear;
     private String workJobResponsibility;
     private String projectName;
     private String projectDescription;
@@ -128,11 +125,11 @@ public class Student {
         this.schoolStartMonth = schoolStartMonth;
     }
     
-    public int getSchoolStartYear() {
+    public String getSchoolStartYear() {
         return schoolStartYear;
     }
 
-    public void setSchoolStartYear(int schoolStartYear) {
+    public void setSchoolStartYear(String schoolStartYear) {
         this.schoolStartYear = schoolStartYear;
     }
     
@@ -144,11 +141,11 @@ public class Student {
         this.schoolEndMonth = schoolEndMonth;
     }
     
-    public int getSchoolEndYear() {
+    public String getSchoolEndYear() {
         return schoolEndYear;
     }
 
-    public void setSchoolEndYear(int schoolEndYear) {
+    public void setSchoolEndYear(String schoolEndYear) {
         this.schoolEndYear = schoolEndYear;
     }
     
@@ -193,11 +190,11 @@ public class Student {
         this.workStartMonth = workStartMonth;
     }
     
-    public int getWorkStartYear() {
+    public String getWorkStartYear() {
         return workStartYear;
     }
 
-    public void setWorkStartYear(int workStartYear) {
+    public void setWorkStartYear(String workStartYear) {
         this.workStartYear = workStartYear;
     }
     
@@ -209,11 +206,11 @@ public class Student {
         this.workEndMonth = workEndMonth;
     }
     
-    public int getWorkEndYear() {
+    public String getWorkEndYear() {
         return workEndYear;
     }
 
-    public void setWorkEndYear(int workEndYear) {
+    public void setWorkEndYear(String workEndYear) {
         this.workEndYear = workEndYear;
     }
     
