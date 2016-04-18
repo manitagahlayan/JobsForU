@@ -1,28 +1,28 @@
-<%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="com.bwm.db.Data"%>
-<%@ page import="com.bwm.page.Show"%>
+<%@ page contentType="text/html; charset=utf-8" %>
+<%@ page import="com.bwm.db.Data" %>
 <html>
 <head>
-<title>login</title>
+<title>
+login
+</title>
 </head>
 <body>
-	<%
+<%
 String strName=(String)request.getParameter("name");
 String strPassword=(String)request.getParameter("password");
 Data data=new Data();
-Show show=new Show();
 int intT=0;
 if(strName!=null||strPassword!=null){
-    intT=data.getRowCount("tb_admin WHERE admin='"+strName+"' AND password='"+strPassword+"'");
+    intT=data.getRowCount("admin WHERE adminName='"+strName+"' AND password='"+strPassword+"'");
     if(intT>0){
 	session.setAttribute("admin",strName);
 	response.sendRedirect("admin.jsp");
     }else{
-	out.print(show.errorBox("Please check your user name and password.","Please check your user name and password."));
+	out.print("<script>alert('Incorrect Email or Password.Please try again.');document.location='index.htm';</script>");
 	return;
     }
 }else{
-    out.print(show.errorBox("Please check your user name and password.","Please check your user name and password."));
+    out.print("<script>alert('Incorrect Email or Password.Please try again.');document.location='index.htm';</script>");
     return;
 }
 %>

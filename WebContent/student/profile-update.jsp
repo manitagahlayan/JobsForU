@@ -1,12 +1,9 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="com.bwm.page.Show"%>
 <%@ page import="com.bwm.db.Data"%>
-<%@ page import="com.bwm.string.Str"%>
 <%
 	request.setCharacterEncoding("utf-8");
 %>
 <jsp:useBean id="student" class="job.Student" scope="request" />
-<jsp:setProperty name="student" property="*" />
 <%
 	String strEmail = (String) session.getAttribute("email");
 	String firstName = request.getParameter("firstName");
@@ -56,9 +53,9 @@
 			+ "'WHERE email='" + strEmail + "'");
 
 	if (intT <= 0) {
-		out.print("<script>alert('Failed to connect to the database.');document.location='profile-view.jsp';</script>");
+		out.print("<script>alert('Student profile update failed.');document.location='profile-view.jsp';</script>");
 		return;
 	} else {
-		out.print("<script>alert('Edit Successed.');document.location='profile-view.jsp';</script>");
+		out.print("<script>alert('Student profile update succeeded.');document.location='profile-view.jsp';</script>");
 	}
 %>

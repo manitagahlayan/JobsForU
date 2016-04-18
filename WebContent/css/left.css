@@ -1,4 +1,4 @@
-/* CSS Document form bwm*/
+
 a {
 	text-decoration: none;
 }
@@ -12,7 +12,7 @@ a {
 	font-size: 12pt;
 	text-decoration: none;
 	font-weight: bold;
-	color: #F5f7f7;
+	color: #ffffff;
 }
 
 #link2 a {
@@ -22,13 +22,14 @@ a {
 }
 
 td {
-	font-size: 12px;
+	font-size: 20px;
 }
 
 #font1 {
+	font-family: 'Glyphicons Halflings';
 	font-weight: bold;
 	font-size: 16px;
-	color: #F5f7f7;
+	color: #ffffff;
 	margin: 10px;
 }
 
@@ -42,15 +43,29 @@ td {
 }
 
 #reg {
-	color: #33FF00;
+	font-family: 'Glyphicons Halflings';
+	color: #ffffff;
 }
 
 #font {
-	font-family: "�����п�";
+	font-family: 'Glyphicons Halflings';
 	font-size: 36px;
 	color: #993300;
 }
 
 body {
 	background-image: url(../images/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#reg2 {
+	font-family: 'Glyphicons Halflings';
+	font-size: 13px;
+}
+
+#reg3 {
+	font-family: 'Glyphicons Halflings';
+	font-size: 15px;
+	color: #ffffff;
 }

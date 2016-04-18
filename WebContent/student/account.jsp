@@ -1,87 +1,109 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="com.bwm.db.Conn"%>
-<%@ page import="com.bwm.page.Show"%>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>My Profile</title>
-<!-- Bootstrap Core CSS -->
-<link href="../dist/css/vendor/bootstrap.min.css" rel="stylesheet">
-<!-- Loading Flat UI -->
-<link href="../dist/css/flat-ui.css" rel="stylesheet">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Account Setting | LinkedUs.org</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../js/default.js"></script>
+	
+    <!-- Loading Bootstrap -->
+    <link href="../dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="../dist/css/flat-ui.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../dist/img/favicon.png">
+
 <!-- Custom CSS -->
 <link
 	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet prefetch">
 <link href="../dist/css/style.css" rel="stylesheet">
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
+  </head>
+  
 
 <body>
-	<%
+<%
 Conn con=new Conn();
-Show show=new Show();
-String strChecked="checked";
 String strEmail=(String)session.getAttribute("email");
-ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
+ResultSet rs=con.getRs("SELECT * FROM Student WHERE email='"+strEmail+"'");
         if(rs.next()){
 %>
-	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top drop-shadow"
-		role="navigation">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
+<!-- Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top drop-shadow" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#navbar-collapse">
-					<span class="sr-only">Toggle navigation</span>
-				</button>
-				<span class="navbar-brand" style="color: #FFFFFF">Linked<strong>Us</strong>.org
-				</span>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="navbar-collapse">
-				<ul class="nav navbar-nav">
-
-					<li class="dropdown"><a href="profile-view.jsp"
-						class="dropdown-toggle" data-toggle="dropdown"> <i
+        	<span class="sr-only">Toggle navigation</span>
+        </button>
+        <span class="navbar-brand" >Linked<strong>Us</strong>.org </span>        
+      </div>
+      
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav text-uppercase">
+          <li class="dropdown">
+            <a href="profile-view.jsp"
+						class="dropdown-toggle" data-toggle="dropdown">
+              <i
 							class="fa fa-user"></i>&nbsp;&nbsp; Profile <span class="caret"></span>
-					</a>
-						<ul class="dropdown-menu">
-							<li><a href="profile-view.jsp"> View Profile </a></li>
-							<li><a href="profile-edit.jsp"> Edit Profile </a></li>
-							<li><a href="upload.html"> Upload Resume </a></li>
-						</ul></li>
-					<li><a href="job-listing.jsp"> <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
-					</a></li>
-					<li class="active"><a href="account.jsp"> <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
-					</a></li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-	</nav>
-	<!-- Page Content -->
-
-	<section class="content" style="padding-top: 80px;">
-		<div class="container content">
-    
-			<div class="row">
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="profile-view.jsp">
+                  View Profile
+                </a>
+              </li>
+              <li>
+                <a href="profile-edit.jsp">
+                  Edit Profile
+                </a>
+              </li>
+              <li>
+                <a href="upload.jsp">
+                  Upload Resume
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="job-listing.jsp">
+              <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
+            </a>
+          </li>
+          <li class="active">
+            <a href="account.jsp">
+              <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+  </nav>
+	
+<!-- Page Content -->
+	<section class="content">
+		<div class="container">
+    		<div class="row">
       
       <div class="col-md-10 col-sm-8">
       
-					<div class="panel panel-default text-center">
+					<div class="panel text-center">
 						<div class="panel-body">
-							<form class="form-horizontal" role="form" action="account-update.jsp">
+							<form class="form-horizontal" role="form" name="form" action="account-update.jsp">
             <div class="form-group">
               <label for="inputEmail1" class="col-lg-2 col-md-3 control-label">Email</label>
               <div class="col-lg-10 col-md-9 ">
@@ -91,26 +113,25 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
             <div class="form-group">
               <label for="inputEmail1" class="col-lg-2 col-md-3 control-label">Old Password</label>
               <div class="col-lg-10 col-md-9 ">
-                <input type="password" class="form-control" id="" placeholder="Old Password">
+                <input type="password" class="form-control" id="" placeholder="Old Password" name="oldPassword">
               </div>
             </div>
             <div class="form-group">
               <label for="inputEmail1" class="col-lg-2 col-md-3 control-label">New Password</label>
               <div class="col-lg-10 col-md-9 ">
-                <input type="password" class="form-control" id="" placeholder="New Password" name="newPassword">
+                <input type="password" class="form-control" id="" placeholder="New Password" name="password">
               </div>
             </div>
             <div class="form-group">
               <label for="inputEmail1" class="col-lg-2 col-md-3 control-label">Repeat Password</label>
               <div class="col-lg-10 col-md-9 ">
-                <input type="password" class="form-control" id="" placeholder="Repeat Password">
+                <input type="password" class="form-control" id="" placeholder="Repeat Password" name="rpassword">
               </div>
-            </div>
-            
+            </div>            
             
             <div class="form-group">
               <div class="col-lg-offset-2 col-md-offset-3 col-lg-10 col-md-9">
-                <button type="submit" class="btn btn-default">Save</button>
+                <button type="submit" class="btn btn-primary btn-block" onClick="return reg()">Save</button>
               </div>
             </div>
           </form>
@@ -128,7 +149,8 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
 			<script>window.prettyPrint && prettyPrint();</script>
 		</div>
 	</section>
-	<!-- Bootstrap core JavaScript
+
+<!-- Bootstrap core JavaScript
 ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="js/jquery.min.js"></script>
@@ -138,9 +160,10 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
 	<script src="docs/assets/js/prettify.js"></script>
 	<script src="docs/assets/js/application.js"></script>
 	<script>
-          videojs.options.flash.swf = "../js/vendors/video-js.swf"
-        </script>
-                	<%
+		videojs.options.flash.swf = "../js/vendors/video-js.swf"
+    </script>
+
+<%
         }else{
             out.print("<script>alert('Failed to Connect to Database.');document.location='profile-view.jsp';</script>");
         }
