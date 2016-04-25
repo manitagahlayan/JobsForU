@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="com.bwm.db.Conn"%>
+<%@ page import="com.linkedus.db.Conn"%>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,14 +73,15 @@ ResultSet rs=con.getRs("SELECT * FROM Recruiter WHERE recEmail='"+strEmail+"'");
 
 <!-- Page Content -->
 	<section class="content">
-		<div class="container">    
+		<div class="container">
+    
 			<div class="row">
       
       <div class="col-md-10 col-sm-8">
       
 					<div class="panel text-center">
 						<div class="panel-body">
-							<form class="form-horizontal" role="form" name="form" action="account-update.jsp">
+							<form class="form-horizontal" role="form">
             <div class="form-group">
               <label for="inputEmail1" class="col-lg-2 col-md-3 control-label">Email</label>
               <div class="col-lg-10 col-md-9 ">
@@ -108,7 +109,7 @@ ResultSet rs=con.getRs("SELECT * FROM Recruiter WHERE recEmail='"+strEmail+"'");
             
             <div class="form-group">
               <div class="col-lg-offset-2 col-md-offset-3 col-lg-10 col-md-9">
-                <button type="submit" class="btn btn-primary btn-block" onClick="return reg()">Save</button>
+                <button type="submit" class="btn btn-primary btn-block">Save</button>
               </div>
             </div>
           </form>

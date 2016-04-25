@@ -95,30 +95,26 @@
 					<h3 class="panel-title">Resume</h3>
 				</div>
 				<div class="panel-body">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" name="uploadForm" action="upload.jsp" method="POST" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col-md-8 col-sm-12 row-space-top-1">
-								<input type="file">
+								<input type="file" name="file" value="">
 								<p class="help-block">
 									Upload your resume. <br> Accepted formats are .doc, .docx,
 									.ppt, .pptx, .pez, .pdf. <br> The size should be less than
 									5 MB.
 								</p>
-								<a
-									class="btn btn-primary btn-wide row-space-2 row-space-top-2 text-capitalize"
-									href="#"> Upload </a>
+								<input class="btn btn-primary btn-wide row-space-2 row-space-top-2 text-capitalize"
+									type="submit" value="Upload" name="submit" />
 							</div>
 							<div class="col-md-4 col-sm-6 row-space-4">
               
               <div class="thumbnail text-center">
             <h1 class=" tile-image"><i class="fa fa-file-text-o" style="font-size: 100px"></i></h1>
 									<div class="caption">
-              <p>Updated on MM/DD/YYYY</p>
                     
 											<a class="btn btn-primary row-space-2 row-space-top-2"
-												href="#"> View </a> &nbsp; <a
-												class="btn btn-default btn-stroke row-space-2 row-space-top-2"
-												href="#"> Delete </a>
+												href="../DownloadServlet"> View Resume</a>
               </div>
           </div>
               

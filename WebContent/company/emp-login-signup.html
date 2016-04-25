@@ -6,6 +6,7 @@
 <title>Login/Sign-In | LinkedUs.org</title>
 
 <link rel="shortcut icon" href="../dist/img/favicon.png">
+<script src="../js/default.js"></script>
 
 <!-- Custom CSS -->
 <link rel="stylesheet" href="../dist/css/normalize.css">
@@ -59,40 +60,37 @@
           <div class="logmod__tab lgm-1">
             <div class="logmod__heading">
               <span class="logmod__heading-subtitle">Enter
-              details below to <strong>create a company account</strong>
+              	details below to <strong>create a company account</strong>
               </span>
             </div>
             <div class="logmod__form">
-              <form accept-charset="utf-8" action="stu-signup.jsp"
-								class="simform">
+              <form accept-charset="utf-8" action="emp-signup.jsp"
+								class="simform" name="form">
                 <div class="sminputs">
                   <div class="input full">
                     <label class="string optional" for="user-name">Email*</label>
-                    <input class="string optional" maxlength="255"
-											id="user-email" name="email"
-											placeholder="Email"
-											type="email" size="50" />
+                    <input class="string optional" maxlength="255" id="user-email" 
+                    						name="email" placeholder="Email" type="email" 
+                    						size="50" />
                   </div>
                 </div>
                 <div class="sminputs">
                   <div class="input string optional">
-                    <label class="string optional" for="user-pw">Password
-                      *</label>
+                    <label class="string optional" for="user-pw">Password*</label>
                     <input class="string optional" maxlength="255" id="user-pw"
 											name="password" placeholder="Password" type="password"
 											size="50" />
                   </div>
                   <div class="input string optional">
-                    <label class="string optional" for="user-pw-repeat">Repeat
-                      password *</label>
-                    <input class="string optional" maxlength="255"
-											id="user-pw-repeat"  name="rpassword" placeholder="Repeat
-											password" type="password" size="50">
+                    <label class="string optional" for="user-pw-repeat">Repeat password*</label>
+                    <input class="string optional" maxlength="255" id="user-pw-repeat"  
+                    						name="rpassword" placeholder="Repeat password" type="password" 
+                    						size="50" />
                   </div>
                 </div>
                 <div class="simform__actions">
                   <input class="sumbit btn green" name="commit" type="submit"
-										value="Create Account" />
+										value="Create Account" onClick="return reg()" />
                   <!--<span class="simform__actions-sidetext">By creating an account you agree to our <a class="special" href="#" target="_blank" role="link">Terms & Privacy</a></span>-->
                 </div>
               </form>
@@ -100,26 +98,26 @@
           </div>
           <div class="logmod__tab lgm-2">
             <div class="logmod__heading">
-              <span class="logmod__heading-subtitle">Enter your email
-              and password to <strong>log in as company</strong>
+              <span class="logmod__heading-subtitle">
+              	Enter your email and password to <strong>log in as company</strong>
               </span>
             </div>
             <div class="logmod__form">
-              <form accept-charset="utf-8" action="stu-login.jsp"
+              <form accept-charset="utf-8" action="emp-login.jsp"
 								class="simform">
                 <div class="sminputs">
                   <div class="input full">
                     <label class="string optional" for="user-name">Email*</label>
                     <input class="string optional" maxlength="255" id="user-email"
-											name="user-email" placeholder="Email" type="email" size="50" />
+											name="emp-email" placeholder="Email" type="email" 
+											size="50" />
                   </div>
                 </div>
                 <div class="sminputs">
                   <div class="input full">
-                    <label class="string optional" for="user-pw">Password
-                      *</label>
+                    <label class="string optional" for="user-pw">Password*</label>
                     <input class="string optional" maxlength="255" id="user-pw"
-											name="user-pw" placeholder="Password" type="password"
+											name="emp-pw" placeholder="Password" type="password"
 											size="50" />
                     <span class="hide-password">Show</span>
                   </div>

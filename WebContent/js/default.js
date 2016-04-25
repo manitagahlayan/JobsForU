@@ -7,20 +7,3 @@ function reg(){
 	}
 	return true;
 }
-
-function email(){
-	if(document.form1.jname.value==""||document.form1.jname.value.indexOf("@")==-1||document.form1.jname.value.indexOf(".")==-1){
-		alert("�������������ȷEmail");
-		return false;
-	}
-	if(document.form1.sname.value==""||document.form1.sname.value.indexOf("@")==-1||document.form1.sname.value.indexOf(".")==-1){
-		alert("��������������ȷEmail");
-		return false;
-	}
-	if(document.form1.title.value==""){
-		alert("����������");
-		return false;
-	}
-
-	return true;
-}

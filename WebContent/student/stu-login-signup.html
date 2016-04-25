@@ -5,12 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login/Sign-In | LinkedUs.org</title>
 
-<script src="../js/default.js"></script>
 <link rel="shortcut icon" href="../dist/img/favicon.png">
+<script src="../js/default.js"></script>
+
 <!-- Custom CSS -->
 <link rel="stylesheet" href="../dist/css/normalize.css">
 <link rel="stylesheet" href="../dist/css/login.css">
 <link href="../dist/css/style.css" rel="stylesheet">
+
 <link
 	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet prefetch">
@@ -57,41 +59,38 @@
         <div class="logmod__tab-wrapper">
           <div class="logmod__tab lgm-1">
             <div class="logmod__heading">
-              <span class="logmod__heading-subtitle">Use your ITU email to <strong>create a student account</strong>
+              <span class="logmod__heading-subtitle">
+              	Use your ITU email to <strong>create a student account</strong>
               </span>
             </div>
             <div class="logmod__form">
               <form accept-charset="utf-8" action="stu-signup.jsp"
-								class="simform" name="form" />
+								class="simform" name="form">
                 <div class="sminputs">
                   <div class="input full">
-                    <label class="string optional" for="user-name">ITU
-                      Email*</label>
-                    <input class="string optional" maxlength="255"
-											id="user-email" name="email"
-											placeholder="ITU Email (e.g. example@students.itu.edu)"
-											type="email" size="50" />
+                    <label class="string optional" for="user-name">ITU Email*</label>
+                    <input class="string optional" maxlength="255" id="user-email" 
+											name="email" placeholder="ITU Email (e.g. example@students.itu.edu)" type="email" 
+											size="50" />
                   </div>
                 </div>
                 <div class="sminputs">
                   <div class="input string optional">
-                    <label class="string optional" for="user-pw">Password
-                      *</label>
+                    <label class="string optional" for="user-pw">Password*</label>
                     <input class="string optional" maxlength="255" id="user-pw"
 											name="password" placeholder="Password" type="password"
 											size="50" />
                   </div>
                   <div class="input string optional">
-                    <label class="string optional" for="user-pw-repeat">Repeat
-                      password *</label>
+                    <label class="string optional" for="user-pw-repeat">Repeat password*</label>
                     <input class="string optional" maxlength="255" id="user-pw-repeat"  
-                    						name="rpassword" placeholder="Repeat password" type="password" 
-                    						size="50" />
+											name="rpassword" placeholder="Repeat password" type="password"
+											size="50" />
                   </div>
                 </div>
                 <div class="simform__actions">
-                  <input class="sumbit btn green btn-primary btn-embossed" name="commit" 
-                  						type="submit" value="Create Account" onClick="return reg()" />
+                  <input class="sumbit btn green btn-primary btn-embossed" name="commit" type="submit"
+										value="Create Account" onClick="return reg()" />
                   <!--<span class="simform__actions-sidetext">By creating an account you agree to our <a class="special" href="#" target="_blank" role="link">Terms & Privacy</a></span>-->
                 </div>
               </form>
@@ -99,8 +98,8 @@
           </div>
           <div class="logmod__tab lgm-2">
             <div class="logmod__heading">
-              <span class="logmod__heading-subtitle">Enter your email
-              and password to <strong>log in as student</strong>
+              <span class="logmod__heading-subtitle">
+              	Enter your email and password to <strong>log in as student</strong>
               </span>
             </div>
             <div class="logmod__form">
@@ -110,13 +109,13 @@
                   <div class="input full">
                     <label class="string optional" for="user-name">Email*</label>
                     <input class="string optional" maxlength="255" id="user-email"
-											name="user-email" placeholder="Email" type="email" size="50" />
+											name="user-email" placeholder="Email" type="email" 
+											size="50" />
                   </div>
                 </div>
                 <div class="sminputs">
                   <div class="input full">
-                    <label class="string optional" for="user-pw">Password
-                      *</label>
+                    <label class="string optional" for="user-pw">Password*</label>
                     <input class="string optional" maxlength="255" id="user-pw"
 											name="user-pw" placeholder="Password" type="password"
 											size="50" />

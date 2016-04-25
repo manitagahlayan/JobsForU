@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-<%@ page import="com.bwm.db.Conn"%>
+<%@ page import="com.linkedus.db.Conn"%>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,16 +32,17 @@
   
 
 <body>
-        							<%
-								Conn con = new Conn();
-								String empEmail = (String) session.getAttribute("emp-email");
-								String stuEmail = request.getParameter("email");
-								ResultSet rs = con.getRs("SELECT * FROM student where Email='"
-										+ stuEmail + "'");
-								while (rs.next()) {
+<%
+Conn con = new Conn();
+String empEmail = (String) session.getAttribute("emp-email");
+String stuEmail = request.getParameter("email");
+session.setAttribute("stu-email", stuEmail);
+ResultSet rs = con.getRs("SELECT * FROM student where Email='"
+	+ stuEmail + "'");
+while (rs.next()) {
+%>
 
-							%>
-  <!-- Navigation -->
+<!-- Navigation -->
   <nav class="navbar navbar-inverse navbar-fixed-top drop-shadow" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -118,11 +119,11 @@
 									<h1 class="text-uppercase"><%=rs.getString(3)%> <%=rs.getString(4)%></h1>
 									<h5 class="text-muted"><%=rs.getString(6)%></h5>
                   <!--Download resume-->
-									<a href="#"> <i class="fa fa-file"></i>&nbsp;&nbsp;Download Resume
+									<a href="download.jsp"> <i class="fa fa-file"></i>&nbsp;&nbsp;Download Resume
 									</a>
 									<hr width="30%">
-									<h4>Expected Job Title</h4>
-									<p><%=rs.getString(8)%></p>
+									<h4><%=rs.getString(8)%></h4>
+									<p><%=rs.getString(7)%></p>
                     
 								</div>
 							</div>

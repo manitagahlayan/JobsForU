@@ -1,3 +1,6 @@
+<%@page import="java.io.*" %>
+<%@page contentType="text/html; charset=utf-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,17 +22,77 @@
 	rel="stylesheet prefetch">
 <link href="../dist/css/style.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  
 
 <body>
-  <!-- Navigation -->
+<%
+String saveFile = new String();
+String contentType = request.getContentType();
+String strEmail=(String)session.getAttribute("email");
+
+if((contentType != null) && (contentType.indexOf("multipart/form-data") >=0 )){
+	
+	DataInputStream in = new DataInputStream(request.getInputStream());
+	
+	int formDataLength = request.getContentLength();
+	byte dataBytes[] = new byte[formDataLength];
+	int byteRead = 0;
+	int totalBytesRead = 0;
+	
+	while(totalBytesRead < formDataLength){
+		byteRead = in.read(dataBytes, totalBytesRead, formDataLength);
+		totalBytesRead += byteRead;		
+	}
+	
+	String file = new String(dataBytes, "CP1256");
+	
+	//saveFile = file.substring(file.indexOf("filename=\"") + 10);
+	//saveFile = saveFile.substring(0, saveFile.indexOf("\n"));
+	//saveFile = saveFile.substring(saveFile.lastIndexOf("\\") + 1, saveFile.indexOf("\""));
+	
+	int lastIndex = contentType.lastIndexOf("=");
+	String boundary = contentType.substring(lastIndex + 1, contentType.length());
+	
+	int pos;
+	
+	pos = file.indexOf("filename=\"");
+	pos = file.indexOf("\n", pos) + 1;
+	pos = file.indexOf("\n", pos) + 1;
+	pos = file.indexOf("\n", pos) + 1;
+	
+	int boundaryLocation = file.indexOf(boundary, pos) - 4;
+	
+	int startPos = ((file.substring(0, pos)).getBytes("CP1256")).length;
+	int endPos = ((file.substring(0, boundaryLocation)).getBytes("CP1256")).length;
+	
+	saveFile = "/Users/kouxping/Documents/" + strEmail + ".pdf";
+	
+	File ff = new File(saveFile);
+	
+	try{
+		FileOutputStream fileOut = new FileOutputStream(ff);
+		fileOut.write(dataBytes, startPos, (endPos - startPos));
+		fileOut.flush();
+	
+		out.println("<script type=\"text/javascript\">");
+	    out.println("alert('Upload Successfully');");
+	    out.println("</script>");
+	    
+	    fileOut.close();
+	
+	} catch (Exception e){
+		out.println(e);
+	}
+}
+%>  
+
+<!-- Navigation -->
   <nav class="navbar navbar-default navbar-fixed-top drop-shadow" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,10 +108,9 @@
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav text-uppercase">
           <li class="dropdown active">
-            <a href="profile-view.jsp"
+            <a href="#"
 						class="dropdown-toggle" data-toggle="dropdown">
-              <i
-							class="fa fa-user"></i>&nbsp;&nbsp; Profile <span class="caret"></span>
+              <i class="fa fa-user"></i>&nbsp;&nbsp; Profile <span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
               <li>
@@ -83,7 +145,8 @@
       <!-- /.navbar-collapse -->
     </div>
   </nav>
-	<!-- Page Content -->
+  
+<!-- Page Content -->
 
 	<section class="content">
 		<div class="container">
@@ -95,35 +158,29 @@
 					<h3 class="panel-title">Resume</h3>
 				</div>
 				<div class="panel-body">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" name="uploadForm" action="upload.jsp" method="POST" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col-md-8 col-sm-12 row-space-top-1">
-								<input type="file">
+				
+					<input type="file" name="file" value="">
 								<p class="help-block">
-									Upload your resume. <br> Accepted formats are .doc, .docx,
-									.ppt, .pptx, .pez, .pdf. <br> The size should be less than
-									5 MB.
+									Upload your resume. <br> 
+									Accepted format is .txt only. <br> 
+									The size should be less than 5 MB.
 								</p>
-								<a
-									class="btn btn-primary btn-wide row-space-2 row-space-top-2 text-capitalize"
-									href="#"> Upload </a>
+								<input class="btn btn-primary btn-wide row-space-2 row-space-top-2 text-capitalize"
+									type="submit" value="Upload" name="submit" />
 							</div>
 							<div class="col-md-4 col-sm-6 row-space-4">
               
               <div class="thumbnail text-center">
             <h1 class=" tile-image"><i class="fa fa-file-text-o" style="font-size: 100px"></i></h1>
-									<div class="caption">
-              <p>Updated on MM/DD/YYYY</p>
-                    
+									<div class="caption">                
 											<a class="btn btn-primary row-space-2 row-space-top-2"
-												href="#"> View </a> &nbsp; <a
-												class="btn btn-default btn-stroke row-space-2 row-space-top-2"
-												href="#"> Delete </a>
+												href="download.jsp"> Download Resume</a>
               </div>
           </div>
-              
-              
-								
+							
 							</div>
 						</div>
 

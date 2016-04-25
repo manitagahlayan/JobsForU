@@ -9,6 +9,7 @@ package job;
 public class Job {
 
     private int jobID;
+    private String recEmail;
     private String jobTitle;
     private String companyName;
     private String companyWebsite;
@@ -20,6 +21,8 @@ public class Job {
     private String experienceLevel;
     private String jobFunction;
     private String education;
+    private String postTime;
+    private String jobLink;
     
     public Job() {
     	
@@ -120,4 +123,33 @@ public class Job {
     public void setEducation(String education) {
         this.education = education;
     }
+
+	public String getRecEmail() {
+		return recEmail;
+	}
+
+	public void setRecEmail(String recEmail) {
+		this.recEmail = recEmail;
+	}
+
+	public String getPostTime() {
+		return postTime;
+	}
+
+	public void setPostTime(String postTime) {
+		this.postTime = postTime;
+	}
+
+	public void setCompanyWebsite(String companyWebsite) {
+		this.companyWebsite = companyWebsite;
+	}
+
+	public String getJobLink() {
+		return jobLink;
+	}
+
+	public void setJobLink(String jobLink) {
+		this.jobLink = jobLink;
+	}
+    
 }

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8" %>
-<%@ page import="com.bwm.db.Conn"%>
+<%@ page import="com.linkedus.db.Conn"%>
 <%@ page import="java.sql.*"%>
 <!DOCTYPE html>
 <html lang="en">

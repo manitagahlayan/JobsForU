@@ -29,14 +29,6 @@
   
 
 <body>
-            <%
-Conn con=new Conn();
-String strEmail=(String)session.getAttribute("email");
-String jobID=request.getParameter("jobID");
-ResultSet rs=con.getRs("SELECT * FROM job where jobID='"+jobID+"'");
-	while(rs.next()){
-		
-%>
   <!-- Navigation -->
   <nav class="navbar navbar-default navbar-fixed-top drop-shadow" role="navigation">
     <div class="container">
@@ -60,29 +52,29 @@ ResultSet rs=con.getRs("SELECT * FROM job where jobID='"+jobID+"'");
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a href="profile-view.jsp">
+                <a href="profile-view.html">
                   View Profile
                 </a>
               </li>
               <li>
-                <a href="profile-edit.jsp">
+                <a href="profile-edit.html">
                   Edit Profile
                 </a>
               </li>
               <li>
-                <a href="upload.jsp">
+                <a href="upload.html">
                   Upload Resume
                 </a>
               </li>
             </ul>
           </li>
           <li class="active">
-            <a href="job-listing.jsp">
+            <a href="job-listing.html">
               <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
             </a>
           </li>
           <li>
-            <a href="account.jsp">
+            <a href="account.html">
               <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
             </a>
           </li>
@@ -100,23 +92,19 @@ ResultSet rs=con.getRs("SELECT * FROM job where jobID='"+jobID+"'");
             <div class="panel-body">
               <div class="row">
                 <div class="col-sm-6">
-                  <h1 class="text-uppercase"><%=rs.getString(3)%></h1>
+                  <h1 class="text-uppercase">Job Title</h1>
                   <h4 class="">
-                    <a href="<%=rs.getString(5)%>" target="_blank">
-                       <%=rs.getString(4)%>
+                    <a href="#">
+                      Company Name
                     </a>
                   </h4>
-                  <h5><%=rs.getString(6)%></h5>
+                  <h5>Location</h5>
                   <p class="text-muted">
-                    <i class="fa fa-calendar"></i>&nbsp;&nbsp;Posted on <%=rs.getString(14)%></p>
-                  <h5 class="">
-	                  <a href="mailto:123">
-	                       <%=rs.getString(2)%>
-	                    </a>
-	              </h5>
+                    <i class="fa fa-calendar"></i>&nbsp;&nbsp;Posted on March 11, 2016</p>
+                 
                 </div>
                 <div class="col-sm-6 text-center">
-                 <h1><a href="<%=rs.getString(15)%>" target="_blank" class="btn btn-primary">
+                 <h1><a href="#" target="_blank" class="btn btn-primary">
                     Apply on company website
                   </a></h1>
                 </div>
@@ -129,30 +117,44 @@ ResultSet rs=con.getRs("SELECT * FROM job where jobID='"+jobID+"'");
                 <div class="col-md-9 col-sm-12">
                 <div>
                   <h4>Job Description</h4>
-                  <p><%=rs.getString(7)%></p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                    sint occaecat cupidatat non proident, sunt in culpa qui
+                    officia deserunt mollit anim id est laborum.</p>
                     </div>
                     <br>
                     <div>
                   <h4>Desired Skills and Experience</h4>
-                  <p><%=rs.getString(8)%></p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                    sint occaecat cupidatat non proident, sunt in culpa qui
+                    officia deserunt mollit anim id est laborum.</p>
                     </div>
                     <br>
                     
                 </div>
                 <div class="col-md-3 col-sm-12">
                   <div class="text-capitalize">
-                    <h4>Preferred Major</h4>
-                    <p><%=rs.getString(9)%></p>
+                    <h4>Industry</h4>
+                    <p>internet</p>
                   </div>
                   <br>
                   <div class="text-capitalize">
                     <h4>Employment Type</h4>
-                    <p><%=rs.getString(10)%></p>
+                    <p>full-time</p>
                   </div>
                   <br>
                   <div class="text-capitalize">
                     <h4>experience</h4>
-                    <p><%=rs.getString(11)%></p>
+                    <p>mid-senior level</p>
                   </div>
                   <br>
                   <div class="text-capitalize">
@@ -162,7 +164,7 @@ ResultSet rs=con.getRs("SELECT * FROM job where jobID='"+jobID+"'");
                   <br>
                   <div>
                     <h4 class="text-capitalize">education</h4>
-                    <p><%=rs.getString(13)%></p>
+                    <p>Bachelor’s or Master’s or PhD in Computer Science</p>
                     
                     </div>
                   <br>
@@ -189,9 +191,7 @@ ResultSet rs=con.getRs("SELECT * FROM job where jobID='"+jobID+"'");
   <script>
           videojs.options.flash.swf = "../js/vendors/video-js.swf"
         </script>
-                   <%
-	}
-%> 
+
 
 </body>
 </html>

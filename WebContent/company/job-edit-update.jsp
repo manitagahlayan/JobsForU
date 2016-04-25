@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import="com.bwm.db.Data"%>
+<%@ page import="com.linkedus.db.Data"%>
 <%
 	request.setCharacterEncoding("utf-8");
 %>

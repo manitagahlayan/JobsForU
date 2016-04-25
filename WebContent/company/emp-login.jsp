@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<jsp:useBean id="data" class="com.bwm.db.Data" scope="page" />
+<jsp:useBean id="data" class="com.linkedus.db.Data" scope="page" />
 <html>
 <head>
 <title>login</title>
@@ -16,6 +16,7 @@
 		intT=data.getRowCount("Recruiter WHERE recEmail='"+strEmail+"' AND password='"+strPassword+"'");
 		if(intT>0){
 		    session.setAttribute("emp-email",strEmail);
+		    session.setAttribute("stu-email","");
 		    response.sendRedirect("job-manage.jsp");
 		}else{
 			out.print("<script>alert('Incorrect Email or Password.Please try again.');document.location='emp-login-signup.html';</script>");
