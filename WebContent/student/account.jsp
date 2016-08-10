@@ -133,6 +133,7 @@ ResultSet rs=con.getRs("SELECT * FROM Student WHERE email='"+strEmail+"'");
              <div class="form-group">
               <div class="col-lg-offset-2 col-md-offset-3 col-lg-10 col-md-9">
                 <button type="submit" class="btn btn-primary btn-block">Save</button>
+                
               </div>
             </div>
           </form>
@@ -140,16 +141,28 @@ ResultSet rs=con.getRs("SELECT * FROM Student WHERE email='"+strEmail+"'");
 					</div>
 					<br>
 				</div>
-				<div class="col-md-2 col-sm-4">
+				<div class="col-md-2 col-sm-4 form-group">
 					<div>
 						<a href="stu-login-signup.html" class="btn btn-block btn-danger">Log Out</a>
+						
 					</div>
 				</div>
-				
+				<section>
+				<div class="col-md-2 col-sm-4">
+					<form class="form-group" role="form" action="account-delete.jsp">
+						<div>
+		 					<button type="submit" class="btn btn-primary btn-block" name="deactivate" onclick="return decativatealert()">Deactivate</button> 
+						</div>
+					</form>
+				</div>
+				</section>
 			</div>
 			<script>window.prettyPrint && prettyPrint();</script>
 		</div>
 	</section>
+	
+		
+	
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
