@@ -15,6 +15,10 @@
             out.print("<script>alert('Please create your account using correct email format');document.location='emp-login-signup.html';</script>");
             return;
     	}
+		if(strPassword.length() > 15 || strPassword.length() < 8){
+			out.print("<script>alert('Passowrd Length should be minimun 8 and can not exceed 15.')</script>");
+			return;
+		}
 		int intT = 0;
 		Data data = new Data();
 		intT = data.getRowCount("Recruiter WHERE recEmail='" + strEmail + "'");

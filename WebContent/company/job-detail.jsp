@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Job Detail | LinkedUs.org</title>
+<title>Job Detail | Jobs4U</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
@@ -34,7 +34,7 @@
 <body>
 <%
 Conn con=new Conn();
-String strEmail=(String)session.getAttribute("emp_email");
+String strEmail=(String)session.getAttribute("emp-email");
 String industry=(String)session.getAttribute("industry");
 //String jobID=request.getParameter("jobID");
 //session.setAttribute("jobID",jobID);
@@ -42,6 +42,7 @@ String jobID=(String)session.getAttribute("jobID");
 //String industry=request.getParameter("industry");
 ResultSet rs=con.getRs("SELECT * FROM job where jobID='"+ jobID +"'");
 ResultSet rs2=con.getRs("SELECT * FROM student where schoolMajor='"+ industry +"'");
+ResultSet rs3=con.getRs("SELECT * FROM JobApplications where jobID='"+ jobID +"'" + "AND recEmail='"+strEmail+"'");
 	while(rs.next()){
 		
 %>
@@ -54,7 +55,7 @@ ResultSet rs2=con.getRs("SELECT * FROM student where schoolMajor='"+ industry +"
 					data-target="#navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         </button>
-        <span class="navbar-brand">Linked<strong>Us</strong>.org </span>
+        <span class="navbar-brand"><strong><a href="http://localhost:8080/linkedus">Jobs4U</a></strong></span>
       </div>
       
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -192,6 +193,28 @@ ResultSet rs2=con.getRs("SELECT * FROM student where schoolMajor='"+ industry +"
           
           </div>
         </div>
+        
+        <!--Applicants for the job-->
+        <div class="col-md-3">
+	        <div class="panel">
+		        <div class="panel-heading">
+		             Students Applied for Job
+		        </div>
+		        <%
+					while(rs3.next()){
+				%>
+		        <div class="panel-body">
+			        <form action="profile-view.jsp">
+			        <input type="hidden" name="email" value="<%=rs3.getString(3)%>">
+			        <p><button class="btn btn-primary text-capitalize" type="submit">
+			         <%=rs3.getString(4)%> <%=rs3.getString(5) %></button></p>
+			         </form>
+		        </div>
+		        <%
+				}
+				%>
+          </div>
+       </div>
       </div>
       <script>window.prettyPrint && prettyPrint();</script>
     </div>
