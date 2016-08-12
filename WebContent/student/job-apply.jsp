@@ -21,7 +21,7 @@
 	
 	intT = data.getRowCount("JobApplications WHERE jobID='" + jobID + "'" +"AND stdEmail='"+stdEmail+"'" +"AND recEmail='"+recEmail+"'");
 	if(intT > 0) {
-		out.print("<script>alert('Sorry, You have already applied to this job.');document.location='job-listing.html';</script>");
+		out.print("<script>alert('Sorry, You have already applied to this job.');document.location='job-listing.jsp';</script>");
 		return;
 	} else {
 			if(rs.first()){
@@ -31,10 +31,10 @@
 			}
 			
 		if (intT <= 0) {
-			out.print("<script>alert('Job Application Failed.Please try again later');document.location='job-listing.html';</script>");
+			out.print("<script>alert('Job Application Failed.Please try again later');document.location='job-listing.jsp';</script>");
 			return;
 		} else {
-			out.print("<script>alert('Your have applied to the job successfully!');document.location='job-listing.html';</script>");
+			out.print("<script>alert('Your have applied to the job successfully!');document.location='job-listing.jsp';</script>");
 		}
 	}
 %>

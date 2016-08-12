@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Job Detail | LinkedUs.org</title>
+    <title>Job Detail | Jobs4U</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
@@ -49,7 +49,7 @@ ResultSet rs=con.getRs("SELECT * FROM job where jobID='"+jobID+"'");
           data-target="#navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         </button>
-        <span class="navbar-brand">Linked<strong>Us</strong>.org </span>
+        <span class="navbar-brand"><strong><a href="http://localhost:8080/linkedus">Jobs4U</a></strong></span>
       </div>
       
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -118,11 +118,16 @@ ResultSet rs=con.getRs("SELECT * FROM job where jobID='"+jobID+"'");
                       </a>
                 </h5>
                 </div>
+                <form action="job-apply.jsp">
                 <div class="col-sm-6 text-center">
-                 <h1><a href="<%=rs.getString(15)%>" target="_blank" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary " name="apply" >Apply</button>
+                <input type="hidden" name="jobID" value="<%=rs.getInt(1)%>">
+                <input type="hidden" name ="recEmail" value="<%=rs.getString(2) %>">
+                 <%-- <h1><a href="<%=rs.getString(15)%>" target="_blank" class="btn btn-primary">
                     Apply on company website
-                  </a></h1>
+                  </a></h1> --%>
                 </div>
+                </form>
               </div>
               </div>
               </div>

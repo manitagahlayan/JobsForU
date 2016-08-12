@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Jobs | LinkedUs.org</title>
+<title>Jobs | Jobs4U</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Loading Bootstrap -->
@@ -43,7 +43,7 @@
 					data-target="#navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
 				</button>
-				<span class="navbar-brand">Linked<strong>Us</strong>.org
+				<span class="navbar-brand"><strong><a href="http://localhost:8080/linkedus">Jobs4U</a></strong>
 				</span>
 			</div>
 

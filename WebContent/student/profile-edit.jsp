@@ -5,7 +5,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Edit Profile | LinkedUs.org</title>
+    <title>Edit Profile | Jobs4U</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Loading Bootstrap -->
@@ -47,7 +47,7 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
 					data-target="#navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         </button>
-        <span class="navbar-brand" >Linked<strong>Us</strong>.org </span>        
+        <span class="navbar-brand" ><strong><a href="http://localhost:8080/linkedus">Jobs4U</a></strong></span>        
       </div>
       
       <!-- Collect the nav links, forms, and other content for toggling -->

@@ -12,6 +12,10 @@
 		out.print("<script>alert('Please fill out the form completely.');document.location='stu-login-signup.html';</script>");
 		return;
 	} else {
+		if(strPassword.length() > 15 || strPassword.length() < 8){
+			out.print("<script>alert('Passowrd Length should be minimun 8 and can not exceed 15.')</script>");
+			return;
+		}
 		int intT=0;
 		intT=data.getRowCount("Student WHERE email='"+strEmail+"' AND password='"+strPassword+"'");
 		if(intT>0){
