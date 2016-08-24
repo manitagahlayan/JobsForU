@@ -5,9 +5,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My Account Settings | LinkedUs.org</title>
+    <title>My Account Setting | Jobs4U</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<script src="../js/default.js"></script>
+	
     <!-- Loading Bootstrap -->
     <link href="../dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -47,7 +48,7 @@ ResultSet rs=con.getRs("SELECT * FROM Student WHERE email='"+strEmail+"'");
 					data-target="#navbar-collapse">
         	<span class="sr-only">Toggle navigation</span>
         </button>
-        <span class="navbar-brand">Linked<strong>Us</strong>.org </span>
+        <span class="navbar-brand" ><strong><a href="http://localhost:8080/linkedus">Jobs4U</a></strong></span>        
       </div>
       
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -58,7 +59,6 @@ ResultSet rs=con.getRs("SELECT * FROM Student WHERE email='"+strEmail+"'");
 						class="dropdown-toggle" data-toggle="dropdown">
               <i
 							class="fa fa-user"></i>&nbsp;&nbsp; Profile <span class="caret"></span>
-
             </a>
             <ul class="dropdown-menu">
               <li class=" active">
@@ -112,12 +112,11 @@ ResultSet rs=con.getRs("SELECT * FROM Student WHERE email='"+strEmail+"'");
               <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
             </a>
           </li>
-        </ul>        
+        </ul>
       </div>
       <!-- /.navbar-collapse -->
     </div>
   </nav>
-
 	
 <!-- Page Content -->
 <section class="content">
@@ -158,6 +157,7 @@ ResultSet rs=con.getRs("SELECT * FROM Student WHERE email='"+strEmail+"'");
              <div class="form-group">
               <div class="col-lg-offset-2 col-md-offset-3 col-lg-10 col-md-9">
                 <button type="submit" class="btn btn-primary btn-block">Save</button>
+                
               </div>
             </div>
           </form>
@@ -165,16 +165,28 @@ ResultSet rs=con.getRs("SELECT * FROM Student WHERE email='"+strEmail+"'");
 					</div>
 					<br>
 				</div>
-				<div class="col-md-2 col-sm-4">
+				<div class="col-md-2 col-sm-4 form-group">
 					<div>
 						<a href="stu-login-signup.html" class="btn btn-block btn-danger">Log Out</a>
+						
 					</div>
 				</div>
-				
+				<section>
+				<div class="col-md-2 col-sm-4">
+					<form class="form-group" role="form" action="account-delete.jsp">
+						<div>
+		 					<button type="submit" class="btn btn-primary btn-block" name="deactivate" onclick="return decativatealert()">Deactivate</button> 
+						</div>
+					</form>
+				</div>
+				</section>
 			</div>
 			<script>window.prettyPrint && prettyPrint();</script>
 		</div>
 	</section>
+	
+		
+	
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

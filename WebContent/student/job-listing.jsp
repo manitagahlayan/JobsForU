@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Jobs | LinkedUs.org</title>
+<title>Jobs | Jobs4U</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Loading Bootstrap -->
@@ -44,7 +44,7 @@
 					data-target="#navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
 				</button>
-				<span class="navbar-brand">Linked<strong>Us</strong>.org
+				<span class="navbar-brand"><strong><a href="http://localhost:8080/linkedus">Jobs4U</a></strong>
 				</span>
 			</div>
 
@@ -143,15 +143,10 @@
 							<%
 								Conn con = new Conn();
 								String strEmail = (String) session.getAttribute("email");
-								//String jobIDStr = (String) session.getAttribute("jobID");
-								//int jobID = Integer.parseInt(jobIDStr);
 								ResultSet rs = con.getRs("SELECT * FROM job");
 								while (rs.next()) {
 
 									int jobID = rs.getInt(1);
-									
-									//out.print(jobID);
-									
 							%>
 							<form action="job-detail.jsp">
 								<div class="row">
@@ -169,12 +164,10 @@
 											<button
 												class="btn btn-primary btn-block btn-wide text-capitalize"
 												type="submit">View</button>
-												
 										</h1>
 									</div>
 								</div>
 							</form>
-							
 							 
 							<form action = "job-save.jsp">
 							    <div class="row">
@@ -192,7 +185,6 @@
 								
 							</form>  
 							
-							 
 							<%
 								}
 							%>

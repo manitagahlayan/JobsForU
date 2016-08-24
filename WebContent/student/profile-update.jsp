@@ -36,7 +36,6 @@
 
 	int intT = 0;
 	Data data = new Data();
-	
 	intT = data.insert("UPDATE student SET firstName='" + firstName
 			+ "',lastName='" + lastName + "',telephone='" + telephone
 			+ "',address='" + address + "',summary='" + summary

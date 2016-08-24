@@ -1,13 +1,17 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="com.linkedus.db.Conn"%>
 <%@ page import="java.sql.*"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My Profile | Jobs4U</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<head >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../dist/css/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+ 
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <!-- Loading Bootstrap -->
     <link href="../dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -20,17 +24,13 @@
 <link
 	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet prefetch">
-<link href="../dist/css/style.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  
-
+  <script>
+  $( function() {
+    $("#datepicker").datepicker();
+  } );
+  </script>
+</head>
 <body>
 <%
 Conn con=new Conn();
@@ -38,8 +38,7 @@ String strEmail=(String)session.getAttribute("email");
 ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
         if(rs.next()){    
 %>
-<!-- Navigation -->
-  <nav class="navbar navbar-default navbar-fixed-top drop-shadow" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top drop-shadow" role="navigation">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -76,39 +75,18 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
                   Upload Resume
                 </a>
               </li>
-            </ul>
-          </li>
-          <!--  from here -->
-          <li class="dropdown active">
-            <a href="profile-view.jsp"
-						class="dropdown-toggle" data-toggle="dropdown">
-              <i
-							class="fa fa-user"></i>&nbsp;&nbsp; Job <span class="caret"></span>
-
-            </a>
-            <ul class="dropdown-menu">
-              <li class=" active">
-                <a href="job-listing.jsp">
-                  Jobs
-                </a>
-              </li>
               <li>
                 <a href="career-services.jsp">
                   Career Services
                 </a>
               </li>
-	      <li>
-                <a href="view-saved-jobs.jsp">
-                  Saved Jobs
-                </a>
-              </li>
             </ul>
           </li>
-          <!-- <li>
+          <li>
             <a href="job-listing.jsp">
               <i class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
             </a>
-          </li> -->
+          </li>
           <li>
             <a href="account.jsp">
               <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
@@ -119,7 +97,7 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
       <!-- /.navbar-collapse -->
     </div>
   </nav>
- 
+
 <!-- Page Content -->
 	<section class="content">
 		<div class="container">
@@ -128,31 +106,28 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-sm-12">
-									<h1 class="text-uppercase"><%=rs.getString(3)%> <%=rs.getString(4)%></h1>
-									<h5 class="text-muted"><%=rs.getString(6)%></h5>
-									<a href="profile-edit.jsp#basics"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
-									</a>
+									<h2 class="text-uppercase">Career Services</h2>
+									
 									<hr width="30%">
-									<h4><%=rs.getString(8)%></h4>
-									<p><%=rs.getString(7)%></p>
+									
+									
+									<h5>
+									
+    Learning modules, skill-building activities, and challenges will help you prepare to conquer the job search process.<br>
+    Interest and skills assessments will help you better understand your strengths and preferences to assist with goal planning<br>
+    Job search tools will help you find listings that match your objective as well as tools to help you manage and track your applications<br>
+    Opportunities posted directly by cooperative businesses for ITU students
+									
+									</h5>
                     
 								</div>
 							</div>
               <div class="row">
                 <div class="col-md-6 col-sm-12">
-                  <h1><i class="fa fa-envelope-o"></i></h1>&nbsp;<a href="mailto:"><%=rs.getString(1)%></a>
-                </div>
-                <div class="col-md-6 col-sm-12">
-                  <h1><i class="fa fa-mobile-phone"></i></h1>&nbsp;<%=rs.getString(5)%>
+                  <h1><i class="fa fa-envelope-o"></i></h1>&nbsp;<a href="mailto:careerservices@itu.edu">careerservices@itu.edu</a>
                 </div>
                 
               </div>
-              <div class="row">
-								<div class="col-sm-12">
-									<p>Preferred Time to Contact: <%=rs.getString(32)%> - <%=rs.getString(33)%></p>
-									
-								</div>
-								</div>
 						</div>
 					</div>
 					<!--Education-->
@@ -161,7 +136,7 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
 							<div class="row">
 
 								<div class="col-sm-12 col-xs-12">
-									<span class="panel-title text-uppercase">Education&nbsp;&nbsp;&nbsp;&nbsp;</span>
+									<span class="panel-title text-uppercase">Timings&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								
 									<small><a href="profile-edit.jsp#edu"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
 
@@ -172,88 +147,34 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
 						</div>
 						<div class="panel-body">
 							<div class="row">
-								<div class="col-md-3">
-									<h3 class="text-uppercase text-muted"><%=rs.getString("schoolStartMonth")%> <%=rs.getString("schoolStartYear")%> — <%=rs.getString("schoolEndMonth")%> <%=rs.getString("schoolEndYear")%>
-									</h3>
-								</div>
-								<div class="col-md-9">
-									<h2><%=rs.getString("schoolName")%></h2>
-									<h5 class="text-uppercase"><%=rs.getString("schoolDegree")%></h5>
-									<p><%=rs.getString("schoolMajor")%></p>
+							<p> Meeting Date:
+									<input type="text" id="datepicker"> </p>
+								<div class="col-sm-12">
+									
+									Drop-in hours are :<br>
+									Tuesdays from 10 am to 12 pm PST and Thursdays from 3:30 pm to 5:30 pm PST. <br>
+									<h5>Simply stop by the Career Services table outside the ITU Library.<br>
+									Appointments outside of drop-in hours can be made by contacting careerservices@itu.edu</h5>
+									
 								</div>
 							</div>
 						</div>
 					</div>
-					<!--Employment-->
-					<div class="panel panel-default" id="work">
-						<div class="panel-heading">
-							<div class="row">
-
-								<div class="col-sm-12">
-									<span class="panel-title text-uppercase">Employment&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								
-									<small><a href="profile-edit.jsp#work"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
-
-									</a>
-                  </small>
-								</div>
-							</div>
-						</div>
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-md-3">
-									<h3 class="text-uppercase text-muted"><%=rs.getString(19)%> <%=rs.getString(20)%> — <%=rs.getString(21)%> <%=rs.getString(22)%>
-									</h3>
-								</div>
-								<div class="col-md-9">
-									<h2><%=rs.getString(17)%></h2>
-									<h5 class="text-uppercase"><%=rs.getString(18)%></h5>
-									<p><%=rs.getString(23)%></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--Project-->
-					<div class="panel panel-default" id="project">
-						<div class="panel-heading">
-							<div class="row">
-
-								<div class="col-sm-12">
-									<span class="panel-title text-uppercase">Project&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								
-									<small><a href="profile-edit.jsp#project"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
-									</a></small>
-								</div>
-							</div>
-						</div>
-						<div class="panel-body">
-							<div class="row">
-
-								<div class="col-sm-12">
-									<h2><%=rs.getString(24)%></h2>
-									<p><%=rs.getString(25)%></p>
-								</div>
-							</div>
-						</div>
-					</div>
-          <!--Skills-->
+					
+					
+          <!--Policies-->
 					<div class="panel panel-default" id="skills">
 						<div class="panel-heading">
 							<div class="row">
-
 								<div class="col-sm-12">
-									<span class="panel-title text-uppercase">Skills&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								<small>
-									<a href="profile-edit.jsp#skills"> <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit
-									</a>
-                  </small>
+									<span class="panel-title text-uppercase">Policies/Terms & Conditions&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								</div>
 							</div>
 						</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-sm-12">
-									<p><%=rs.getString(9)%></p>
+									<p><a href="http://itu.edu/career-services/career-services-policy/"> ITU Career Services Policies</a></p>
 								</div>
 							</div>
 						</div>
@@ -274,11 +195,12 @@ ResultSet rs=con.getRs("SELECT * FROM student WHERE email='"+strEmail+"'");
   <script>
 	videojs.options.flash.swf = "../js/vendors/video-js.swf"
   </script>
-        	
+
 <%
         }else{
             out.print("<script>alert('Failed to Connect to Database.');document.location='profile-view.jsp';</script>");
         }
 %>
+
 </body>
 </html>

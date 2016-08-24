@@ -11,6 +11,10 @@
 		out.print("<script>alert('Please fill out the form completely.');document.location='stu-login-signup.html';</script>");
 		return;
 	} else {
+		if(strPassword.length() > 15 || strPassword.length() < 8){
+			out.print("<script>alert('Passowrd Length should be minimun 8 and can not exceed 15.')</script>");
+			return;
+		}
 		if(!(strEmail.matches("[a-zA-Z0-9\\.]+@[a-zA-Z0-9\\-\\_\\.]+\\.[a-zA-Z0-9]{3}"))){
             out.print("<script>alert('Please create your account using correct email format');document.location='stu-login-signup.html';</script>");
             return;
@@ -21,7 +25,6 @@
 		int intT = 0;
 		Data data = new Data();
 		intT = data.getRowCount("Student WHERE email='" + strEmail + "'");
-		//out.print(intT);
 		if (intT > 0) {
 			out.print("<script>alert('Sorry, this email already exists. Please try with another one.');document.location='stu-login-signup.html';</script>");
 			return;
