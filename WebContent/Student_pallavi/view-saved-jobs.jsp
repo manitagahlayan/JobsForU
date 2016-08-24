@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="com.linkedus.db.Conn"%>
 <%@ page import="java.sql.*"%>
+<%@ page import="com.linkedus.db.Data"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,9 +60,33 @@
 							<li><a href="profile-edit.jsp"> Edit Profile </a></li>
 							<li><a href="upload.html"> Upload Resume </a></li>
 						</ul></li>
-					<li class="active"><a href="job-listing.jsp"> <i
+						<!--  from here -->
+          <li class="dropdown active">
+            <a href="profile-view.jsp"
+						class="dropdown-toggle" data-toggle="dropdown">
+              <i
+							class="fa fa-user"></i>&nbsp;&nbsp; Job <span class="caret"></span>
+
+            </a>
+            <ul class="dropdown-menu">
+              <li class=" active">
+                <a href="job-listing.jsp">
+                  Jobs
+                </a>
+              </li>
+              <li>
+                <a href="view-saved-jobs.jsp">
+                  Saved Jobs
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+          
+          <!-- to here -->
+					<!-- <li class="active"><a href="job-listing.jsp"> <i
 							class="fa fa-briefcase"></i>&nbsp;&nbsp;Jobs
-					</a></li>
+					</a></li> -->
 					<li><a href="account.jsp"> <i class="fa fa-gear"></i>&nbsp;&nbsp;Account
 					</a></li>
 				</ul>
@@ -74,97 +99,74 @@
 	<section class="content">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3 col-sm-4">
-					<!-- #### Side Nav #### -->
-					<div id="sidenav">
-						<div class="panel">
-
-							<div class="panel-body">
-								<form id="jobSearchForm" name="jobSearchForm" method="POST"
-									action="job-searching.jsp">
-									<fieldset class="text-input-fields">
-										<label class="control-label" for="">Job Title</label>
-										<div class="">
-											<input type="text" class="form-control" value="" name="sjobTitle">
-
-										</div>
-										<br> <label class="control-label" for="">Company</label>
-										<div class="">
-											<input type="text" class="form-control" value="" name="scompanyName">
-
-										</div>
-										<br> <label class="control-label" for="">Location</label>
-										<div class="">
-											<input type="text" class="form-control" value="" name="slocation">
-
-										</div>
-										<br>
-									</fieldset>
-									<div class="form-controls">
-
-										<button type="submit" class="btn btn-primary">
-											<i class="fa fa-search"></i>&nbsp;&nbsp;Search
-										</button>
-										&nbsp;<input type="reset" class="btn btn-link" value="Reset">
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 				<div class="col-md-9 col-sm-8">
 					<div class="panel" id="basics">
 						<div class="panel-body">
 							<%
-								String strJobTitle = (String)request.getParameter("sjobTitle");
-								String strCompanyName = (String)request.getParameter("scompanyName");
-								String strLocation = (String)request.getParameter("slocation");
-								System.out.println (strJobTitle);
-								System.out.println (strCompanyName);
-								System.out.println (strLocation);
-							
 								Conn con = new Conn();
-								ResultSet rs = con.getRs("SELECT * FROM job");
-								if (strJobTitle != "" && strCompanyName != "" && strLocation != ""){
-									rs = con.getRs("SELECT * FROM job WHERE jobTitle='"+strJobTitle+"' AND companyName='"+strCompanyName+"' AND location='"+strLocation+"'");
-								}else if (strJobTitle != "" && strCompanyName != ""){
-									rs = con.getRs("SELECT * FROM job WHERE jobTitle='"+strJobTitle+"' AND companyName='"+strCompanyName+"'");
-								}else if (strCompanyName != "" && strLocation != ""){
-									rs = con.getRs("SELECT * FROM job WHERE companyName='"+strCompanyName+"' AND location='"+strLocation+"'");
-								}else if (strJobTitle != "" && strLocation != ""){
-									rs = con.getRs("SELECT * FROM job WHERE jobTitle='"+strJobTitle+"' AND location='"+strLocation+"'");
-								}else if (strJobTitle != ""){
-									rs = con.getRs("SELECT * FROM job WHERE jobTitle='"+strJobTitle+"'");
-								}else if (strCompanyName != ""){
-									rs = con.getRs("SELECT * FROM job WHERE companyName='"+strCompanyName+"'");
-								}else if (strLocation != ""){
-									rs = con.getRs("SELECT * FROM job WHERE location='"+strLocation+"'");
-								}
-								
-								while (rs.next()){
-									int jobID = rs.getInt(1);
+								String strEmail = (String) session.getAttribute("email");
+								//out.print(strEmail);
+								//String jobIDStr = (String) session.getAttribute("jobID");
+								//int jobID = Integer.parseInt(jobIDStr);
+								ResultSet rs = con.getRs("SELECT job1, job2, job3, job4, job5 FROM Student where email='"+strEmail+"'");
+								int i = 1;
+								while (rs.next()) {
+									while(i != 5){
+										
+                        
+									int jobID = rs.getInt(i);
+									
+								    
+									ResultSet rsJob = con.getRs("SELECT * from Job where jobID = '"+jobID+"'");	
+									//ResultSet rsJobID = con.getRs("SELECT jobID from Job");
+									while(rsJob.next()) { 
+										 int rsJobIDValue = rs.getInt(1);
+										 
+									
+									
+									//out.print(jobID);
+									//out.print(rsJob.getInt(1));
+									
 							%>
-							<form action="job-detail.jsp">
-								<div class="row">
+							
+								   <div class="row">
 									<div class="col-md-10 col-sm-12">
-										<h3 class="text-uppercase"><%=rs.getString(3)%></h3>
-										<h4><%=rs.getString(4)%></h4>
+										<h3 class="text-uppercase"><%=rsJob.getString(3)%></h3>
+										<h4><%=rsJob.getString(4)%></h4>
 										<h5>
-											<i class="fa fa-map-marker"></i>&nbsp;<%=rs.getString(6)%></h5>
-										<h6 class="text-muted"><%=rs.getString(14)%></h6>
-										<input type="hidden" name="jobID" value="<%=rs.getInt(1)%>">
+											<i class="fa fa-map-marker"></i>&nbsp;<%=rsJob.getString(6)%></h5>
+										<h6 class="text-muted"><%=rsJob.getString(14)%></h6>
+										
 
 									</div>
-									<div class="col-md-2 col-sm-12 text-center">
+									
+								</div>
+				 
+			 				
+							 
+							
+							 <form action = "job-delete.jsp">
+							    <div class="row">
+							    
+								<div class="col-md-2 col-sm-12 text-center">
 										<h1>
+										<input type="hidden" name="jobID" value="<%=rs.getInt(i)%>">
 											<button
 												class="btn btn-primary btn-block btn-wide text-capitalize"
-												type="submit">View</button>
+												type="submit">Delete</button>
+												
 										</h1>
-									</div>
+									</div>										
 								</div>
-							</form>
+								
+							</form>   
 							<%
+								
+									}
+									i = i + 1;
+									//out.print("Next");
+								}
 								}
 							%>
 							<hr>
